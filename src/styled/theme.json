@@ -1,0 +1,15 @@
+{
+    "navbar":{
+        "bg": "#242526",
+        "bgAccent": "#484a4d",
+        "textColor": "#dadce1",
+        "navSize": "60px",
+        "border": "1px solid #474a4d",
+        "borderRadius": "8px",
+        "speed": "500ms",
+        "navitem":{
+            "width": "calc(60px * 0.8)",
+            "buttonSize": "calc(60px * 0.5)"
+        }
+    }
+}

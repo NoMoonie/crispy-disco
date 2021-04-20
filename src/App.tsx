@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "styled-components";
+import GlobalStyle from "styled/globalStyle";
+import Theme from "styled/theme.json";
+import {BrowserRouter as Router, Switch,Route,} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Home from "pages/Home";
+import Navbar from "components/Navbar";
+import Navitem from "components/Navitem";
+import DropDownMenu from "components/DropDownMenu";
+import { FaAngleDown, FaBolt, FaBell } from 'react-icons/fa';
+
+
+
+const App = () => {
+	return (
+		<Router>
+			<ThemeProvider theme={Theme}>
+				<GlobalStyle />
+				<Navbar>
+					<Navitem icon={<FaBolt/>}/>
+					<Navitem icon={<FaBell/>}/>
+
+					<Navitem icon={<FaAngleDown/>}>
+						<DropDownMenu />
+					</Navitem>
+				</Navbar>
+				<Switch>
+					<Route exact path="/">
+						<Home/>
+					</Route>
+				</Switch>
+    		</ThemeProvider>
+		</Router>
+	);
 }
 
 export default App;
+

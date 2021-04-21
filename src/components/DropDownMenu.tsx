@@ -10,14 +10,6 @@ interface NavitemInterface{
     goToMenu?: any;
 }
 
-const left = keyframes`
-    to{
-        transform: translate(-110%)
-    }
-`
- 
-
-
 const DropDownStyle = styled.div`
     position: absolute;
     top: 58px; 

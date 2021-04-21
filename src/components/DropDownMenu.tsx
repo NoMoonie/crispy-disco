@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
-import styled, {keyframes} from "styled-components";
+import styled from "styled-components";
 
-import { FaCode, FaHome, FaUser, FaAngleLeft, FaAngleRight, FaEnvelope, FaBlog, FaImage } from 'react-icons/fa';
+import { FaCode, FaHome, FaUser, FaAngleLeft, FaAngleRight, FaEnvelope, FaImage } from 'react-icons/fa';
 
 
 interface NavitemInterface{

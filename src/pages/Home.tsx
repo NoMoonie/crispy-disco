@@ -1,14 +1,5 @@
-import styled, {keyframes} from "styled-components";
+import styled from "styled-components";
 import img from "img/worldinGlassBottle.png";
-
-const fadein = keyframes`
-from{
-    opacity: 0%;
-}
-to{
-    opacity: 100%;
-}
-`
 
 const HomeStyle = styled.div`
     background-image: url(${img});

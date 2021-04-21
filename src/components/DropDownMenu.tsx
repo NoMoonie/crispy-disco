@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
-import { FaCode, FaCog, FaHome, FaUser, FaAngleLeft, FaAngleRight, FaBrush } from 'react-icons/fa';
+import { FaCode, FaHome, FaUser, FaAngleLeft, FaAngleRight, FaEnvelope, FaBlog, FaImage } from 'react-icons/fa';
 
 
 interface NavitemInterface{
@@ -9,28 +9,23 @@ interface NavitemInterface{
     rightIcon?: any;
     goToMenu?: any;
 }
-/*
+
 const left = keyframes`
-  to {
-    transform: translateX(-110%);
-    
-  }
-`;
-const right = keyframes`
-  to {
-    transform: translateX(110%);
-  }
-`;
-*/
+    to{
+        transform: translate(-110%)
+    }
+`
+ 
+
+
 const DropDownStyle = styled.div`
     position: absolute;
     top: 58px; 
     width: 300px;
-    transform: translateX(-45%);
     background-color: ${props => props.theme.navbar.bg};
     border: ${props => props.theme.navbar.border};
     border-radius: ${props => props.theme.navbar.borderRadius};
-    padding: 1rem; 
+    padding: 1rem;
     overflow: hidden;
     .menu-item{
         height: 50px; 
@@ -46,7 +41,16 @@ const DropDownStyle = styled.div`
             margin-left: auto;
         }
     }
+    p{
+        margin-left: 0.5rem; 
+    }
 `
+
+const Div = styled.div<{ selected?: boolean }>`
+    display: ${props => props.selected ? "" : "none"};
+    
+`
+
 
 
 const DropDownMenu = () => {
@@ -69,34 +73,30 @@ const DropDownMenu = () => {
         );
     }
 
-    const Menu:FC<any> = (props) =>{
-        return(
-            <div hidden={activeMenu !== props.menu}>
-                {props.children}
-            </div>
-        );
-    }
-
-
     return (
         <DropDownStyle>
-            <Menu menu="main" >
-                <DropDownItem leftIcon={<FaHome/>}>Home</DropDownItem>
-                <DropDownItem goToMenu="projekts" leftIcon={<FaCode/>} rightIcon={<FaAngleRight/>}>Projekts {activeMenu}</DropDownItem>
-                <DropDownItem leftIcon={<FaUser />}>About</DropDownItem>
-                <DropDownItem goToMenu="settings" leftIcon={<FaCog />} rightIcon={<FaAngleRight/>}>Setting</DropDownItem>
-            </Menu>
-           
-            <Menu menu="projekts" >
-                <DropDownItem goToMenu="main" leftIcon={<FaAngleLeft/>}></DropDownItem>
-                <DropDownItem leftIcon={<FaCode/>}>Games</DropDownItem>
-                <DropDownItem leftIcon={<FaCode/>}>Webb Dev</DropDownItem>
-            </Menu>
 
-            <Menu menu="settings" >
+            <Div selected={activeMenu ===  "main"} >
+                <DropDownItem leftIcon={<FaHome/>}><p>Home</p></DropDownItem>
+                <DropDownItem goToMenu="projekts" leftIcon={<FaCode/>} rightIcon={<FaAngleRight/>} ><p>Projekts</p></DropDownItem>
+                <DropDownItem leftIcon={<FaImage />}><p>Gallery</p></DropDownItem>
+                <DropDownItem leftIcon={<FaUser />}><p>About</p></DropDownItem>
+                <DropDownItem leftIcon={<FaEnvelope />}><p>Contact</p></DropDownItem>
+            </Div>
+           
+            <Div selected={activeMenu === "projekts"}>
                 <DropDownItem goToMenu="main" leftIcon={<FaAngleLeft/>}></DropDownItem>
-                <DropDownItem leftIcon={<FaBrush/>}>Dark mode</DropDownItem>
-            </Menu>
+                <DropDownItem leftIcon={<FaCode/>}><p>Games</p></DropDownItem>
+                <DropDownItem goToMenu="WebbDev" leftIcon={<FaCode/>} rightIcon={<FaAngleRight/>}><p>WebbDev</p></DropDownItem>
+            </Div>
+
+            <Div selected={activeMenu === "WebbDev"}>
+                <DropDownItem goToMenu="projekts" leftIcon={<FaAngleLeft/>}></DropDownItem>
+                <DropDownItem leftIcon={<FaCode/>}><p>electron todo</p></DropDownItem>
+                <DropDownItem leftIcon={<FaCode/>}><p>My webbsite</p></DropDownItem>
+                <DropDownItem leftIcon={<FaCode/>}><p>react</p></DropDownItem>
+            </Div>
+            
         </DropDownStyle>
     );
 }

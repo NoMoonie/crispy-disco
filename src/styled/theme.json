@@ -11,5 +11,12 @@
             "width": "calc(60px * 0.8)",
             "buttonSize": "calc(60px * 0.5)"
         }
+       
+    },
+    "page":{
+        "bg": "#242526",
+        "bgAccent": "#484a4d",
+        "textColor": "#dadce1",
+        "border": "1px solid #474a4d"
     }
 }

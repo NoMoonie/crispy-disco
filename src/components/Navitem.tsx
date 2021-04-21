@@ -21,7 +21,8 @@ const NavitemStyle = styled.li`
         width: ${props => props.theme.navbar.navitem.buttonSize};
         height: ${props => props.theme.navbar.navitem.buttonSize};
         background-color: ${props => props.theme.navbar.bgAccent};
-        border-radius: 50%;
+        border: 1px solid hsl(282.7722772277228, 100%, 80.19607843137256%); 
+        border-radius: 25%;
         padding: 5px; 
         margin: 2px;
         display: flex;

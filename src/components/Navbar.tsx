@@ -1,17 +1,18 @@
 import styled from "styled-components";
-import {FC} from "react";
+import { FC } from "react";
 
 
 const NavbarStyle = styled.nav`
+    z-index: 1;
     height: ${props => props.theme.navbar.navSize};
-    background-color: ${props => props.theme.navbar.bg};
-    padding: 0 1rem;
-    border-bottom: ${props => props.theme.navbar.border};
+    position: fixed;
+    top: 0;
+    width: 100%;
     .navbar-nav{
         max-width: 100%;
         height: 100%;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
     }
 `
 

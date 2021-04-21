@@ -41,7 +41,7 @@ const DropDownStyle = styled.div`
             margin-left: auto;
         }
     }
-    p{
+    p, h1{
         margin-left: 0.5rem; 
     }
 `
@@ -85,16 +85,9 @@ const DropDownMenu = () => {
             </Div>
            
             <Div selected={activeMenu === "projekts"}>
-                <DropDownItem goToMenu="main" leftIcon={<FaAngleLeft/>}></DropDownItem>
+                <DropDownItem goToMenu="main" leftIcon={<FaAngleLeft/>}><h1>Projekts</h1></DropDownItem>
                 <DropDownItem leftIcon={<FaCode/>}><p>Games</p></DropDownItem>
-                <DropDownItem goToMenu="WebbDev" leftIcon={<FaCode/>} rightIcon={<FaAngleRight/>}><p>WebbDev</p></DropDownItem>
-            </Div>
-
-            <Div selected={activeMenu === "WebbDev"}>
-                <DropDownItem goToMenu="projekts" leftIcon={<FaAngleLeft/>}></DropDownItem>
-                <DropDownItem leftIcon={<FaCode/>}><p>electron todo</p></DropDownItem>
-                <DropDownItem leftIcon={<FaCode/>}><p>My webbsite</p></DropDownItem>
-                <DropDownItem leftIcon={<FaCode/>}><p>react</p></DropDownItem>
+                <DropDownItem leftIcon={<FaCode/>}><p>WebbDev</p></DropDownItem>
             </Div>
             
         </DropDownStyle>

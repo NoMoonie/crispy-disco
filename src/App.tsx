@@ -16,8 +16,8 @@ firebase.initializeApp({
     projectId: "nomoon404",
     storageBucket: "nomoon404.appspot.com",
     messagingSenderId: "763360472309",
-    appId: "1:763360472309:web:0fdfc5c5257daa2eaaa9bc",
-    measurementId: "G-2YS4WGNTV3"
+    appId: "1:763360472309:web:1c2367c7a466edccaaa9bc",
+    measurementId: "G-W9SXEHCS87"
 });
 
 

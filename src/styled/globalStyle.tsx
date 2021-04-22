@@ -1,15 +1,17 @@
-import {createGlobalStyle} from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import "img/worldinGlassBottle.png";
 
 const GlobalStyle = createGlobalStyle`
     *{
         margin: 0;
         padding: 0;
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'DM Mono', sans-serif;
+
     }
     body{
         height: 100%;
         background-color: #110a1a;
+        overflow: hidden;
     }
     ul{
         list-style: none;
@@ -63,4 +65,4 @@ const GlobalStyle = createGlobalStyle`
 
    
 `;
-export default GlobalStyle; 
+export default GlobalStyle;

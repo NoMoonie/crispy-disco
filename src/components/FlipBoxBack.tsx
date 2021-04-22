@@ -36,7 +36,7 @@ const FlipBoxBack = () => {
     return (
         <BoxBack className="flip-box-back">
             <BoxBackinner>
-                <h2>hi! I'm Emil</h2>
+                <h2>Who am i</h2>
                 <p>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore laboriosam
                     doloribus nam! Unde nobis, deserunt necessitatibus delectus praesentium ipsum
@@ -51,9 +51,9 @@ const FlipBoxBack = () => {
                 </p>
             </BoxBackinner>
             <BoxButtonWrapper>
-                <BoxButton>My Photos</BoxButton>
-                <BoxButton>My Projekts</BoxButton>
-                <BoxButton>My CV</BoxButton>
+                <BoxButton>Photos</BoxButton>
+                <BoxButton>Projekts</BoxButton>
+                <BoxButton>CV</BoxButton>
             </BoxButtonWrapper>
         </BoxBack>
     );

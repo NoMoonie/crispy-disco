@@ -18,7 +18,7 @@ const FlipBoxFront = () => {
             <br />
             <hr />
             <br />
-            <h1>Who am i?</h1>
+            <h1>I'm Emil</h1>
         </BoxFront>
     );
 };

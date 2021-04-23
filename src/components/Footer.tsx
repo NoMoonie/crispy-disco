@@ -1,19 +1,19 @@
 import styled from "styled-components";
-import { FaCopyright } from "react-icons/fa";
+import { FaRegCopyright } from "react-icons/fa";
 
 const FooterStyle = styled.div`
-    height: 150px;
+    height: 100px;
     background-color: ${(props) => props.theme.main.bg};
     color: ${(props) => props.theme.main.textColor};
     display: grid;
     place-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
     border-top: ${(props) => props.theme.main.border};
 `;
 
 const Div = styled.div`
     height: 100%;
-    width: 500px;
     color: ${(props) => props.theme.main.textColor};
     display: flex;
     justify-content: space-evenly;
@@ -23,14 +23,14 @@ const Div = styled.div`
 const Footer = () => {
     return (
         <FooterStyle>
-            <Div>
-                <p>contact</p>
-                <p>contact</p>
-            </Div>
+            <Div>Logo</Div>
             <Div>
                 <p>
-                    <FaCopyright /> Emil Strömdahl
+                    <FaRegCopyright /> 2021 Emil Strömdahl
                 </p>
+            </Div>
+            <Div>
+                <p>contact</p>
             </Div>
         </FooterStyle>
     );

@@ -2,12 +2,12 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "styled/globalStyle";
 import Theme from "styled/theme.json";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { FaAngleDown, FaItchIo, FaGithub } from "react-icons/fa";
+import { FaItchIo, FaGithub, FaHome, FaEnvelope, FaImage, FaUser, FaCode } from "react-icons/fa";
 import Home from "pages/Home";
 import About from "pages/About";
 import Navbar from "components/Navbar";
 import Navitem from "components/Navitem";
-import DropDownMenu from "components/DropDownMenu";
+//import DropDownMenu from "components/DropDownMenu";
 import Footer from "components/Footer";
 import Projekts from "pages/Projekts";
 import Gallery from "pages/Gallery";
@@ -19,13 +19,14 @@ const App = () => {
             <ThemeProvider theme={Theme}>
                 <GlobalStyle />
                 <Navbar>
+                    <Navitem icon={<FaEnvelope />} />
+                    <Navitem icon={<FaImage />} />
+                    <Navitem icon={<FaUser />} />
+                    <Navitem icon={<FaHome />} />
+                    <Navitem icon={<FaCode />} />
                     <Navitem icon={<FaItchIo />} />
-
-                    <Navitem icon={<FaAngleDown />}>
-                        <DropDownMenu />
-                    </Navitem>
-
                     <Navitem icon={<FaGithub />} />
+                    {/*<Navitem icon={<FaAngleDown />}> <DropDownMenu  /> </Navitem>*/}
                 </Navbar>
                 <Switch>
                     <Route exact path="/">

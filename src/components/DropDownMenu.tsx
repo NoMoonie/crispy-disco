@@ -1,20 +1,14 @@
 import { FC, useState } from "react";
 import styled from "styled-components";
 
-import {
-    FaCode,
-    FaHome,
-    FaUser,
-    FaAngleLeft,
-    FaAngleRight,
-    FaEnvelope,
-    FaImage,
-} from "react-icons/fa";
+import { FaCode, FaHome, FaUser, FaAngleLeft, FaAngleRight, FaEnvelope, FaImage } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 interface NavitemInterface {
     leftIcon?: any;
     rightIcon?: any;
     goToMenu?: any;
+    link?: any;
 }
 
 const DropDownStyle = styled.div`
@@ -53,20 +47,17 @@ const Div = styled.div<{ selected?: boolean }>`
 const DropDownMenu = () => {
     const [activeMenu, setActiveMenu] = useState("main");
 
-    const DropDownItem: FC<NavitemInterface> = (props) => {
+    const DropDownItem: FC<NavitemInterface> = ({ link, ...props }) => {
         return (
             <>
                 {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
-                <a
-                    onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
-                    className="menu-item"
-                >
+                <Link to={link} onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)} className="menu-item">
                     <span className="icon-button">{props.leftIcon}</span>
 
                     {props.children}
 
                     <span className="icon-right">{props.rightIcon}</span>
-                </a>
+                </Link>
             </>
         );
     };
@@ -74,23 +65,19 @@ const DropDownMenu = () => {
     return (
         <DropDownStyle>
             <Div selected={activeMenu === "main"}>
-                <DropDownItem leftIcon={<FaHome />}>
+                <DropDownItem link="/" leftIcon={<FaHome />}>
                     <p>Home</p>
                 </DropDownItem>
-                <DropDownItem
-                    goToMenu="projekts"
-                    leftIcon={<FaCode />}
-                    rightIcon={<FaAngleRight />}
-                >
+                <DropDownItem goToMenu="projekts" leftIcon={<FaCode />} rightIcon={<FaAngleRight />}>
                     <p>Projekts</p>
                 </DropDownItem>
-                <DropDownItem leftIcon={<FaImage />}>
+                <DropDownItem link="/gallery" leftIcon={<FaImage />}>
                     <p>Gallery</p>
                 </DropDownItem>
-                <DropDownItem leftIcon={<FaUser />}>
+                <DropDownItem link="/about" leftIcon={<FaUser />}>
                     <p>About</p>
                 </DropDownItem>
-                <DropDownItem leftIcon={<FaEnvelope />}>
+                <DropDownItem link="/contact" leftIcon={<FaEnvelope />}>
                     <p>Contact</p>
                 </DropDownItem>
             </Div>

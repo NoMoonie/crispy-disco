@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
     }
     
     ::-webkit-scrollbar {
-            width: 10px;
+        width: 10px;
     }
 
     /* Track */
@@ -32,8 +32,6 @@ const GlobalStyle = createGlobalStyle`
     /* Handle */
     ::-webkit-scrollbar-thumb {
         background: #121212;
-        border-radius: 10px; 
-
     }
 
     /* Handle on hover */

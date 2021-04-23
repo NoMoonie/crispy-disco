@@ -1,20 +1,21 @@
 {
     "navbar": {
-        "bg": "#242526",
-        "bgAccent": "#484a4d",
+        "bg": "#121212",
+        "bgAccent": "#242526",
         "textColor": "#dadce1",
         "navSize": "60px",
-        "border": "1px solid #474a4d",
+        "border": "1px solid #242526",
         "borderRadius": "8px",
         "speed": "500ms",
         "navitem": {
             "width": "calc(60px * 0.8)",
-            "buttonSize": "calc(60px * 0.5)"
+            "buttonSize": "calc(60px * 0.5)",
+            "hover": "#242526"
         }
     },
     "page": {
-        "bg": "#242526",
-        "bgAccent": "#484a4d",
+        "bg": "#121212",
+        "bgAccent": "#242526",
         "textColor": "#dadce1",
         "border": "1px solid #474a4d"
     },
@@ -22,5 +23,11 @@
         "bg": "#fc5185",
         "bgAccent": "#484a4d",
         "textColor": "#f0f0f0"
+    },
+    "main": {
+        "bg": "#121212",
+        "bgAccent": "#242526",
+        "textColor": "#dadce1",
+        "border": "1px solid #242526"
     }
 }

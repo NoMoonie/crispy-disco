@@ -18,7 +18,7 @@ const NavitemStyle = styled.li`
         width: ${(props) => props.theme.navbar.navitem.buttonSize};
         height: ${(props) => props.theme.navbar.navitem.buttonSize};
         background-color: ${(props) => props.theme.navbar.bg};
-        border: 1px solid ${(props) => props.theme.navbar.bgAccent};
+        border: ${(props) => props.theme.navbar.border};
         border-radius: 25%;
         padding: 5px;
         margin: 2px;

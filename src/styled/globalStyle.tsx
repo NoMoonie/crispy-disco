@@ -11,7 +11,6 @@ const GlobalStyle = createGlobalStyle`
     body{
         height: 100%;
         background-color: #110a1a;
-        overflow: hidden;
     }
     ul{
         list-style: none;
@@ -33,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        background: hsl(0, 0%, 7%);
+        background: #121212;
     }
 
     /* Handle on hover */

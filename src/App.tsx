@@ -8,6 +8,7 @@ import About from "pages/About";
 import Navbar from "components/Navbar";
 import Navitem from "components/Navitem";
 import DropDownMenu from "components/DropDownMenu";
+import Footer from "components/Footer";
 
 const App = () => {
     return (
@@ -31,6 +32,7 @@ const App = () => {
                         <About />
                     </Route>
                 </Switch>
+                <Footer />
             </ThemeProvider>
         </Router>
     );

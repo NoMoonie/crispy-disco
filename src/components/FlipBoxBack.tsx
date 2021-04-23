@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BoxButton } from "styled/styledcomp";
+import Button from "components/Button";
 
 const BoxBack = styled.div`
     background-color: ${(props) => props.theme.page.bg};
@@ -7,16 +7,17 @@ const BoxBack = styled.div`
     transform: rotateY(180deg);
     display: grid;
     grid-template-columns: 1fr;
+    border: ${(props) => props.theme.page.border};
 `;
 
 const BoxButtonWrapper = styled.div`
-    background-color: ${(props) => props.theme.page.bgAccent};
     display: flex;
+    border: ${(props) => props.theme.page.border};
     justify-content: space-evenly;
     align-items: center;
     margin: 5px;
     border-radius: 10px;
-    @media (max-width: 768px) {
+    @media (max-width: 1440px) {
         display: none;
     }
 `;
@@ -24,12 +25,10 @@ const BoxButtonWrapper = styled.div`
 const BoxBackinner = styled.article`
     display: grid;
     place-content: center;
-    margin: 20px;
     text-align: left;
-    p {
-        margin-top: 20px;
-        word-wrap: inherit;
-    }
+    overflow: auto;
+    padding-right: 1em;
+    padding-left: 1em;
 `;
 
 const FlipBoxBack = () => {
@@ -51,9 +50,9 @@ const FlipBoxBack = () => {
                 </p>
             </BoxBackinner>
             <BoxButtonWrapper>
-                <BoxButton>Photos</BoxButton>
-                <BoxButton>Projekts</BoxButton>
-                <BoxButton>CV</BoxButton>
+                <Button link="/about">Gallery</Button>
+                <Button link="/about">Projekts</Button>
+                <Button link="/about">About(CV)</Button>
             </BoxButtonWrapper>
         </BoxBack>
     );

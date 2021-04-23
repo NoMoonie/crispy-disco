@@ -31,7 +31,7 @@ const DropDownStyle = styled.div`
         display: flex;
         align-items: center;
         border-radius: ${(props) => props.theme.navbar.borderRadius};
-        transition: background ${(props) => props.theme.navbar.speed};
+        transition: background ${(props) => props.theme.navbar.speed} ease-out;
         padding: 0.5rem;
         &:hover {
             background-color: ${(props) => props.theme.navbar.navitem.hover};

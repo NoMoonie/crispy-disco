@@ -4,17 +4,8 @@ import FlipBoxBack from "components/FlipBoxBack";
 
 const FlipBoxStyled = styled.div`
     background-color: transparent;
-    width: 60em;
-    height: 30em;
-    @media (max-width: 768px) {
-        width: 30em;
-        height: 30em;
-    }
-    @media (max-width: 320px) {
-        width: 19em;
-        height: 47em;
-        margin-top: 30px;
-    }
+    grid-column: 2/3;
+    grid-row: 2/3;
     perspective: 1000px;
 `;
 const FlipBoxInner = styled.div`

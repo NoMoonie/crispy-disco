@@ -14,11 +14,9 @@ const BoxFront = styled.div`
 const FlipBoxFront = () => {
     return (
         <BoxFront className="flip-box-front">
-            <h2>Hello!</h2>
+            <h2>Welcome!</h2>
             <br />
             <hr />
-            <br />
-            <h1>I'm Emil</h1>
         </BoxFront>
     );
 };

@@ -50,8 +50,8 @@ const FlipBoxBack = () => {
                 </p>
             </BoxBackinner>
             <BoxButtonWrapper>
-                <Button link="/about">Gallery</Button>
-                <Button link="/about">Projekts</Button>
+                <Button link="/gallery">Gallery</Button>
+                <Button link="/projekts">Projekts</Button>
                 <Button link="/about">About(CV)</Button>
             </BoxButtonWrapper>
         </BoxBack>

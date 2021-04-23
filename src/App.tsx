@@ -9,6 +9,9 @@ import Navbar from "components/Navbar";
 import Navitem from "components/Navitem";
 import DropDownMenu from "components/DropDownMenu";
 import Footer from "components/Footer";
+import Projekts from "pages/Projekts";
+import Gallery from "pages/Gallery";
+import Contact from "pages/Contact";
 
 const App = () => {
     return (
@@ -30,6 +33,15 @@ const App = () => {
                     </Route>
                     <Route exact path="/about">
                         <About />
+                    </Route>
+                    <Route exact path="/projekts">
+                        <Projekts />
+                    </Route>
+                    <Route exact path="/gallery">
+                        <Gallery />
+                    </Route>
+                    <Route exact path="/contact">
+                        <Contact />
                     </Route>
                 </Switch>
                 <Footer />

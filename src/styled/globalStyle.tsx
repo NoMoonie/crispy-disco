@@ -6,7 +6,6 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-family: 'DM Mono', sans-serif;
-
     }
     body{
         height: 100%;
@@ -27,17 +26,19 @@ const GlobalStyle = createGlobalStyle`
 
     /* Track */
     ::-webkit-scrollbar-track {
-        background: hsl(291, 8%, 34%);
+        background: #242526
     }
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
         background: #121212;
+        border-radius: 10px; 
+
     }
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-        background: #615f5e;
+        background: #474a4d;
     }
 
     input::-webkit-inner-spin-button {
@@ -48,7 +49,6 @@ const GlobalStyle = createGlobalStyle`
     /* Do an horizontal flip when you move the mouse over the flip box container */
     .flip-box:hover .flip-box-inner {
         transform: rotateY(180deg);
-        
     }
 
     /* Position the front and back side */
@@ -59,7 +59,6 @@ const GlobalStyle = createGlobalStyle`
         -webkit-backface-visibility: hidden; /* Safari */
         backface-visibility: hidden;
         border-radius: 10px; 
-        
     }
 
    

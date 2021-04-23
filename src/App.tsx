@@ -2,7 +2,7 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "styled/globalStyle";
 import Theme from "styled/theme.json";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { /* FaAngleDown */ FaItchIo, FaGithub, FaHome, FaEnvelope, FaImage, FaUser, FaCode } from "react-icons/fa";
+import { /*  FaAngleDown, FaItchIo, FaGithub, */ FaHome, FaEnvelope, FaImage, FaUser, FaCode } from "react-icons/fa";
 import Home from "pages/Home";
 import About from "pages/About";
 import Navbar from "components/Navbar";
@@ -21,11 +21,11 @@ const App = () => {
                 <Navbar>
                     <Navitem link="/contact" icon={<FaEnvelope />} />
                     <Navitem link="/gallery" icon={<FaImage />} />
-                    <Navitem link="/about" icon={<FaUser />} />
                     <Navitem link="/" icon={<FaHome />} />
+                    <Navitem link="/about" icon={<FaUser />} />
                     <Navitem link="/projekts" icon={<FaCode />} />
-                    <Navitem link="/projekts" icon={<FaItchIo />} />
-                    <Navitem link="/projekts" icon={<FaGithub />} />
+                    {/*  <Navitem icon={<FaItchIo />} />
+                    <Navitem icon={<FaGithub />} /> */}
                     {/*  <Navitem icon={<FaAngleDown />}>
                         <DropDownMenu />
                     </Navitem> */}

@@ -23,15 +23,13 @@ const Div = styled.div`
 const Footer = () => {
     return (
         <FooterStyle>
-            <Div>Logo</Div>
+            <Div></Div>
             <Div>
                 <p>
                     <FaRegCopyright /> 2021 Emil Strömdahl
                 </p>
             </Div>
-            <Div>
-                <p>contact</p>
-            </Div>
+            <Div></Div>
         </FooterStyle>
     );
 };

@@ -1,8 +1,10 @@
 import { FC, useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 interface NavitemInterface {
     icon?: any;
+    link?: any;
 }
 
 const NavitemStyle = styled.li`
@@ -33,14 +35,14 @@ const NavitemStyle = styled.li`
     }
 `;
 
-const Navitem: FC<NavitemInterface> = (props) => {
+const Navitem: FC<NavitemInterface> = ({ link, ...props }) => {
     const [open, setopen] = useState(false);
     return (
         <NavitemStyle>
             {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
-            <a className="icon-button" onClick={() => setopen(!open)}>
+            <Link to={link} className="icon-button" onClick={() => setopen(!open)}>
                 {props.icon}
-            </a>
+            </Link>
             {open && props.children}
         </NavitemStyle>
     );

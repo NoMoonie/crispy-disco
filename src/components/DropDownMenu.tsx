@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import styled from "styled-components";
 
-import { FaCode, FaHome, FaUser, FaAngleLeft, FaAngleRight, FaEnvelope, FaImage } from "react-icons/fa";
+import { FaItchIo, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 interface NavitemInterface {
@@ -65,32 +65,11 @@ const DropDownMenu = () => {
     return (
         <DropDownStyle>
             <Div selected={activeMenu === "main"}>
-                <DropDownItem link="/" leftIcon={<FaHome />}>
-                    <p>Home</p>
+                <DropDownItem leftIcon={<FaItchIo />}>
+                    <p>Itch.io</p>
                 </DropDownItem>
-                <DropDownItem goToMenu="projekts" leftIcon={<FaCode />} rightIcon={<FaAngleRight />}>
-                    <p>Projekts</p>
-                </DropDownItem>
-                <DropDownItem link="/gallery" leftIcon={<FaImage />}>
-                    <p>Gallery</p>
-                </DropDownItem>
-                <DropDownItem link="/about" leftIcon={<FaUser />}>
-                    <p>About</p>
-                </DropDownItem>
-                <DropDownItem link="/contact" leftIcon={<FaEnvelope />}>
-                    <p>Contact</p>
-                </DropDownItem>
-            </Div>
-
-            <Div selected={activeMenu === "projekts"}>
-                <DropDownItem goToMenu="main" leftIcon={<FaAngleLeft />}>
-                    <h1>Projekts</h1>
-                </DropDownItem>
-                <DropDownItem leftIcon={<FaCode />}>
-                    <p>Games</p>
-                </DropDownItem>
-                <DropDownItem leftIcon={<FaCode />}>
-                    <p>WebbDev</p>
+                <DropDownItem leftIcon={<FaGithub />}>
+                    <p>Github</p>
                 </DropDownItem>
             </Div>
         </DropDownStyle>

@@ -2,7 +2,7 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "styled/globalStyle";
 import Theme from "styled/theme.json";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { FaItchIo, FaGithub, FaHome, FaEnvelope, FaImage, FaUser, FaCode } from "react-icons/fa";
+import { /* FaAngleDown */ FaItchIo, FaGithub, FaHome, FaEnvelope, FaImage, FaUser, FaCode } from "react-icons/fa";
 import Home from "pages/Home";
 import About from "pages/About";
 import Navbar from "components/Navbar";
@@ -19,14 +19,16 @@ const App = () => {
             <ThemeProvider theme={Theme}>
                 <GlobalStyle />
                 <Navbar>
-                    <Navitem icon={<FaEnvelope />} />
-                    <Navitem icon={<FaImage />} />
-                    <Navitem icon={<FaUser />} />
-                    <Navitem icon={<FaHome />} />
-                    <Navitem icon={<FaCode />} />
-                    <Navitem icon={<FaItchIo />} />
-                    <Navitem icon={<FaGithub />} />
-                    {/*<Navitem icon={<FaAngleDown />}> <DropDownMenu  /> </Navitem>*/}
+                    <Navitem link="/contact" icon={<FaEnvelope />} />
+                    <Navitem link="/gallery" icon={<FaImage />} />
+                    <Navitem link="/about" icon={<FaUser />} />
+                    <Navitem link="/" icon={<FaHome />} />
+                    <Navitem link="/projekts" icon={<FaCode />} />
+                    <Navitem link="/projekts" icon={<FaItchIo />} />
+                    <Navitem link="/projekts" icon={<FaGithub />} />
+                    {/*  <Navitem icon={<FaAngleDown />}>
+                        <DropDownMenu />
+                    </Navitem> */}
                 </Navbar>
                 <Switch>
                     <Route exact path="/">

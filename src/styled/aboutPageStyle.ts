@@ -5,12 +5,12 @@ export const ProfilePic = styled.div`
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     background-image: url(${pic});
-    background-size: 60%;
+    background-size: 55%;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
     width: 100%;
-    height: 25%;
+    height: 20%;
     background-color: ${(props) => props.theme.main.scAccent};
     .name {
         position: absolute;
@@ -25,9 +25,6 @@ export const Box1 = styled.div`
     grid-row: 1/3;
     background-color: ${(props) => props.theme.main.bg};
     margin-left: 10em;
-    img {
-        width: 100%;
-    }
     section {
         border-top: ${(props) => props.theme.main.border};
         padding: 1em;

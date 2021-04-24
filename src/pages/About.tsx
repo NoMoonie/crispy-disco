@@ -1,6 +1,10 @@
 import styled from "styled-components";
+import { Box1, Box2, ProfilePic } from "styled/aboutPageStyle";
 import { MdWork } from "react-icons/md";
 import { FaCertificate } from "react-icons/fa";
+import Skills from "components/aboutPageComponents/Skills";
+import Details from "components/aboutPageComponents/Details";
+import List from "components/aboutPageComponents/List";
 
 const AboutStyle = styled.div`
     color: ${(props) => props.theme.main.textColor};
@@ -10,53 +14,30 @@ const AboutStyle = styled.div`
     height: 130vh;
     gap: 1em;
     padding: 4em;
-    div {
-        border: ${(props) => props.theme.main.border};
-        border-radius: 10px;
-        h1 {
-            font-weight: normal;
-        }
-        svg {
-            height: 40px;
-            width: 40px;
-        }
-    }
-`;
-
-const Box1 = styled.div`
-    grid-row: 1/3;
-    background-color: ${(props) => props.theme.main.bg};
-    margin-left: 10em;
-`;
-
-const Box2 = styled.div`
-    grid-column: 2/4;
-    background-color: ${(props) => props.theme.main.bg};
-    margin-right: 10em;
-`;
-
-const Box3 = styled.div`
-    grid-column: 2/4;
-    background-color: ${(props) => props.theme.main.bg};
-    margin-right: 10em;
 `;
 
 const Home = () => {
     return (
         <AboutStyle>
             <Box1>
-                <h1>me</h1>
+                <ProfilePic>
+                    <h1 className="name">Emil Strömdahl</h1>
+                </ProfilePic>
+                <Details />
+                <Skills />
             </Box1>
             <Box2>
                 <h1>
-                    <MdWork /> Work Experience
+                    <MdWork /> <p>Work Experience</p>
                 </h1>
+                <List />
             </Box2>
-            <Box3>
+            <Box2>
                 <h1>
-                    <FaCertificate /> Education
+                    <FaCertificate /> <p>Education</p>
                 </h1>
-            </Box3>
+                <List />
+            </Box2>
         </AboutStyle>
     );
 };

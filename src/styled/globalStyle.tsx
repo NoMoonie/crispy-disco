@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import "img/worldinGlassBottle.jpg";
 
 const GlobalStyle = createGlobalStyle`
     *{

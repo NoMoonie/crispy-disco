@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { Box1, Box2, ProfilePic } from "styled/aboutPageStyle";
 import { MdWork } from "react-icons/md";
 import { FaCertificate } from "react-icons/fa";
-import Skills from "components/aboutPageComponents/Skills";
-import Details from "components/aboutPageComponents/Details";
-import List from "components/aboutPageComponents/List";
-import ListItem from "components/aboutPageComponents/ListItem";
+import Skills from "components/pagesComponets/aboutPage/Skills";
+import Details from "components/pagesComponets/aboutPage/Details";
+import List from "components/pagesComponets/aboutPage/List";
+import ListItem from "components/pagesComponets/aboutPage/ListItem";
 
 const AboutStyle = styled.div`
     color: ${(props) => props.theme.main.textColor};

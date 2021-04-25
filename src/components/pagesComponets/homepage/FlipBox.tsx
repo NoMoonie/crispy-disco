@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import FlipBoxFront from "components/FlipBoxFront";
-import FlipBoxBack from "components/FlipBoxBack";
+import FlipBoxFront from "components/pagesComponets/homepage/FlipBoxFront";
+import FlipBoxBack from "components/pagesComponets/homepage/FlipBoxBack";
 
 const FlipBoxStyled = styled.div`
     background-color: transparent;

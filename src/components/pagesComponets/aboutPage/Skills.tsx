@@ -1,4 +1,4 @@
-import SkillItem from "components/aboutPageComponents/SkillItem";
+import SkillItem from "components/pagesComponets/aboutPage/SkillItem";
 
 const Skills = () => {
     return (

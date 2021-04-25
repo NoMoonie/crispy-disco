@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import img from "img/worldinGlassBottle.jpg";
-import FlipBox from "components/FlipBox";
+import FlipBox from "components/pagesComponets/homepage/FlipBox";
 
 const HomeStyle = styled.div`
     background-image: url(${img});

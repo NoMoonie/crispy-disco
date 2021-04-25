@@ -14,7 +14,7 @@ const Title = styled.h1`
     font-size: 14pt;
 `;
 
-const ListDate = styled.p`
+const ListDate = styled.div`
     display: flex;
     color: ${(props) => props.theme.main.scbg};
     .cal {

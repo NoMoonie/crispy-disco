@@ -27,6 +27,8 @@
     },
     "main": {
         "bg": "#121212",
+        "scbg": "#fc5185",
+        "scAccent": "#96586B",
         "bgAccent": "#313131",
         "textColor": "#dadce1",
         "border": "1px solid #313131"

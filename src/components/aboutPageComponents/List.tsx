@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import ListItem from "./ListItem";
+import { FC } from "react";
+interface Listinterface {}
 
 const Box2Inner = styled.div`
     border-top: ${(props) => props.theme.main.border};
@@ -8,23 +9,8 @@ const Box2Inner = styled.div`
     gap: 2em;
 `;
 
-const Work = () => {
-    return (
-        <Box2Inner>
-            <ListItem title="Lorem ipsum dolor" startdate="jun 2015" enddate="mar 2016">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore ex necessitatibus quam perspiciatis
-                eaque aliquid impedit illo dolores voluptatem rem autem odit,
-            </ListItem>
-            <ListItem title="Lorem ipsum dolor" startdate="jun 2015" enddate="mar 2016">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore ex necessitatibus quam perspiciatis
-                eaque aliquid impedit illo dolores voluptatem rem autem odit,
-            </ListItem>
-            <ListItem title="Lorem ipsum dolor" startdate="jun 2015" enddate="mar 2016">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore ex necessitatibus quam perspiciatis
-                eaque aliquid impedit illo dolores voluptatem rem autem odit,
-            </ListItem>
-        </Box2Inner>
-    );
+const List: FC<Listinterface> = ({ children }) => {
+    return <Box2Inner>{children}</Box2Inner>;
 };
 
-export default Work;
+export default List;

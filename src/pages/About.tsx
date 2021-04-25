@@ -5,6 +5,7 @@ import { FaCertificate } from "react-icons/fa";
 import Skills from "components/aboutPageComponents/Skills";
 import Details from "components/aboutPageComponents/Details";
 import List from "components/aboutPageComponents/List";
+import ListItem from "components/aboutPageComponents/ListItem";
 
 const AboutStyle = styled.div`
     color: ${(props) => props.theme.main.textColor};
@@ -30,13 +31,39 @@ const Home = () => {
                 <h1>
                     <MdWork /> <p>Work Experience</p>
                 </h1>
-                <List />
+                <List>
+                    <ListItem title="Lorem ipsum" startdate="jun 2014" enddate="mar 2016">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur repellat eos nisi
+                        ratione ab impedit iusto labore quas cumque reprehenderit exercitationem,
+                    </ListItem>
+                    <ListItem title="Lorem ipsum" startdate="jun 2014" enddate="mar 2016">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur repellat eos nisi
+                        ratione ab impedit iusto labore quas cumque reprehenderit exercitationem,
+                    </ListItem>
+                    <ListItem title="Lorem ipsum" startdate="jun 2014" enddate="mar 2016">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur repellat eos nisi
+                        ratione ab impedit iusto labore quas cumque reprehenderit exercitationem,
+                    </ListItem>
+                </List>
             </Box2>
             <Box2>
                 <h1>
                     <FaCertificate /> <p>Education</p>
                 </h1>
-                <List />
+                <List>
+                    <ListItem title="Lorem ipsum" startdate="jun 2014" enddate="mar 2016">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur repellat eos nisi
+                        ratione ab impedit iusto labore quas cumque reprehenderit exercitationem,
+                    </ListItem>
+                    <ListItem title="Lorem ipsum" startdate="jun 2014" enddate="mar 2016">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur repellat eos nisi
+                        ratione ab impedit iusto labore quas cumque reprehenderit exercitationem,
+                    </ListItem>
+                    <ListItem title="Lorem ipsum" startdate="jun 2014" enddate="mar 2016">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur repellat eos nisi
+                        ratione ab impedit iusto labore quas cumque reprehenderit exercitationem,
+                    </ListItem>
+                </List>
             </Box2>
         </AboutStyle>
     );

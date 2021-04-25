@@ -1,4 +1,12 @@
 {
+    "main": {
+        "bg": "#121212",
+        "bgAccent": "#313131",
+        "scbg": "#fc5185",
+        "scAccent": "#96586B",
+        "textColor": "#dadce1",
+        "border": "1px solid #313131"
+    },
     "navbar": {
         "bg": "#121212",
         "bgAccent": "#313131",
@@ -13,24 +21,11 @@
             "hover": "#313131"
         }
     },
-    "page": {
-        "bg": "#121212",
-        "bgAccent": "#252525",
-        "textColor": "#dadce1",
-        "border": "1px solid #313131"
-    },
     "button": {
         "bg": "#fc5185",
         "bgAccent": "#313131",
         "textColor": "#f0f0f0",
-        "hover": "#FF92B3"
-    },
-    "main": {
-        "bg": "#121212",
-        "scbg": "#fc5185",
-        "scAccent": "#96586B",
-        "bgAccent": "#313131",
-        "textColor": "#dadce1",
-        "border": "1px solid #313131"
+        "hover": "#FF92B3",
+        "speed": "500ms"
     }
 }

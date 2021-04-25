@@ -21,7 +21,7 @@ const ButtonStyle = styled.div<{ fontsize?: string; width?: string; height?: str
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    transition: background ${(props) => props.theme.navbar.speed} ease-out;
+    transition: background ${(props) => props.theme.button.speed} ease-out;
     &:hover {
         background-color: ${(props) => props.theme.button.hover};
     }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const BoxFront = styled.div`
-    color: ${(props) => props.theme.page.textColor};
+    color: ${(props) => props.theme.main.textColor};
     background-color: hsl(341, 96%, 65%, 0.2);
     display: grid;
     place-content: center;

@@ -41,12 +41,12 @@ const Home = () => {
             </Box1>
             <Box2>
                 <h1>
-                    <MdWork /> <p>Work Experience</p>
+                    <FaCertificate /> <p>Education</p>
                 </h1>
                 <List>
                     {error && <strong>Error: {JSON.stringify(error)}</strong>}
                     {loading && <span>Loading...</span>}
-                    {snapshot?.data()?.work.map((item: any) => {
+                    {snapshot?.data()?.education.map((item: any) => {
                         return (
                             <ListItem
                                 key={item.title}
@@ -62,12 +62,12 @@ const Home = () => {
             </Box2>
             <Box2>
                 <h1>
-                    <FaCertificate /> <p>Education</p>
+                    <MdWork /> <p>Work Experience</p>
                 </h1>
                 <List>
                     {error && <strong>Error: {JSON.stringify(error)}</strong>}
                     {loading && <span>Loading...</span>}
-                    {snapshot?.data()?.education.map((item: any) => {
+                    {snapshot?.data()?.work.map((item: any) => {
                         return (
                             <ListItem
                                 key={item.title}

@@ -22,6 +22,7 @@ const AboutStyle = styled.div`
 
 const Home = () => {
     const [snapshot, loading, error] = useDocumentOnce(firebase.firestore().doc("about/work-doc"));
+    console.log(snapshot?.data()?.details);
 
     return (
         <AboutStyle>
@@ -29,7 +30,13 @@ const Home = () => {
                 <ProfilePic>
                     <h1 className="name">Emil Strömdahl</h1>
                 </ProfilePic>
-                <Details />
+                <Details
+                    professtion={snapshot?.data()?.details.professtion}
+                    location={snapshot?.data()?.details.location}
+                    email={snapshot?.data()?.details.email}
+                    number={snapshot?.data()?.details.number}
+                    loading={loading}
+                />
                 <Skills />
             </Box1>
             <Box2>

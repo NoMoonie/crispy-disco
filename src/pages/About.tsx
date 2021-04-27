@@ -22,7 +22,6 @@ const AboutStyle = styled.div`
 
 const Home = () => {
     const [snapshot, loading, error] = useDocumentOnce(firebase.firestore().doc("about/work-doc"));
-    console.log(snapshot?.data()?.details);
 
     return (
         <AboutStyle>

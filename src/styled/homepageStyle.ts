@@ -8,6 +8,7 @@ const top = keyframes`
 
 const Whoami = keyframes`
     from{
+        transform: translateX(50%);
         opacity: 0;
     }
 `;
@@ -15,7 +16,7 @@ const Whoami = keyframes`
 const title = keyframes`
     from{
         opacity: 0;
-        transform: translateY(-50%);
+        transform: translateX(-50%);
     }
 `;
 
@@ -25,11 +26,12 @@ export const Box1 = styled.div`
     display: grid;
     place-content: center;
     cursor: default;
-    section {
-        padding-top: 1em;
-        display: flex;
-        gap: 1em;
-    }
+`;
+
+export const ButtonWrapper = styled.section`
+    padding-top: 1em;
+    display: flex;
+    gap: 1em;
 `;
 
 export const Box1inner = styled.span`
@@ -74,7 +76,7 @@ export const Box2inner = styled.div`
         animation: ${title} 900ms ease;
     }
     p {
-        animation: ${title} 900ms ease;
+        animation: ${title} 1100ms ease;
         padding-top: 1em;
     }
 `;

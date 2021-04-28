@@ -28,7 +28,7 @@ const Home = () => {
                 <Details />
                 <Skills />
             </Box1>
-            <Box2>
+            <Box2 top>
                 <h1>
                     <MdWork /> <p>Work Experience</p>
                 </h1>

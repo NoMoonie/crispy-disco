@@ -7,9 +7,15 @@ const left = keyframes`
     }
 `;
 
-const right = keyframes`
+const top = keyframes`
     from{
-        transform: translateX(100%);
+        transform: translateY(-100%);
+    }
+`;
+
+const bottom = keyframes`
+    from{
+        transform: translateY(100%);
     }
 `;
 
@@ -43,10 +49,10 @@ export const Box1 = styled.div`
         display: grid;
         gap: 1em;
     }
-    animation: ${left} 1s forwards;
+    animation: ${left} 500ms forwards;
 `;
 
-export const Box2 = styled.div`
+export const Box2 = styled.div<{ top?: boolean }>`
     border-radius: 10px;
     border: ${(props) => props.theme.main.border};
     grid-column: 2/4;
@@ -64,5 +70,5 @@ export const Box2 = styled.div`
             margin-top: 0.3em;
         }
     }
-    animation: ${right} 1s forwards;
+    animation: ${(props) => (props.top ? top : bottom)} 500ms forwards;
 `;

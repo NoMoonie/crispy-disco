@@ -15,6 +15,7 @@ const AboutStyle = styled.div`
     height: 130vh;
     gap: 1em;
     padding: 4em;
+    overflow-x: hidden;
 `;
 
 const Home = () => {
@@ -27,7 +28,7 @@ const Home = () => {
                 <Details />
                 <Skills />
             </Box1>
-            <Box2>
+            <Box2 top>
                 <h1>
                     <MdWork /> <p>Work Experience</p>
                 </h1>

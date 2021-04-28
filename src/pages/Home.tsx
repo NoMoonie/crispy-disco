@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Box1, Box1inner, Box2, Box2inner, LinkStyle } from "styled/homepageStyle";
+import { Box1, Box1inner, Box2, Box2inner, LinkStyle, ButtonWrapper } from "styled/homepageStyle";
 import { ReactComponent as Logo } from "img/logo.svg";
 import { useState } from "react";
 
@@ -27,20 +27,20 @@ const Home = () => {
                     <h1 className="three">web developer.</h1>
                     <p>Back end Debeloper / Front end Developer / React / Electronjs / Wordpress </p>
                 </Box1inner>
-                <section>
+                <ButtonWrapper>
                     <LinkStyle>
-                        <Link className="link" to="/contact">
-                            Contact me
+                        <Link className="link" to="/about">
+                            About / CV
                         </Link>
                     </LinkStyle>
                     <LinkStyle onClick={() => setOpen(!open)}>Who am i</LinkStyle>
-                </section>
+                </ButtonWrapper>
             </Box1>
             <Box2>
                 <Logo />
                 {open && (
                     <Box2inner>
-                        <h1>Who am i</h1>
+                        <h1>About me!</h1>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto illo ad quos animi eos,
                             quaerat odit illum. Quidem incidunt, reiciendis delectus nisi corrupti molestias. Nobis,

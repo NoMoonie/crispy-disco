@@ -1,5 +1,17 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import pic from "img/Logo.jpg";
+
+const left = keyframes`
+    from{
+        transform: translateX(-100%);
+    }
+`;
+
+const right = keyframes`
+    from{
+        transform: translateX(100%);
+    }
+`;
 
 export const ProfilePic = styled.div`
     border-top-left-radius: 10px;
@@ -31,6 +43,7 @@ export const Box1 = styled.div`
         display: grid;
         gap: 1em;
     }
+    animation: ${left} 1s forwards;
 `;
 
 export const Box2 = styled.div`
@@ -51,4 +64,5 @@ export const Box2 = styled.div`
             margin-top: 0.3em;
         }
     }
+    animation: ${right} 1s forwards;
 `;

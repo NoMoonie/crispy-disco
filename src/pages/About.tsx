@@ -15,6 +15,7 @@ const AboutStyle = styled.div`
     height: 130vh;
     gap: 1em;
     padding: 4em;
+    overflow-x: hidden;
 `;
 
 const Home = () => {

@@ -1,20 +1,30 @@
 import { MdWork } from "react-icons/md";
 import { FaHome, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
-const Details = () => {
+import { FC } from "react";
+
+interface Detailsinterface {
+    professtion: string;
+    location: string;
+    number: string;
+    email: string;
+    loading: boolean;
+}
+
+const Details: FC<Detailsinterface> = ({ professtion, location, email, number, loading }) => {
     return (
         <section>
-            <h1>Details</h1>
+            {loading ? <h1>Loading...</h1> : <h1>Details</h1>}
             <p>
-                <MdWork /> Programmer
+                <MdWork /> {professtion}
             </p>
             <p>
-                <FaHome /> Sweden, skåne
+                <FaHome /> {location}
             </p>
             <p>
-                <FaEnvelope /> ex@email.com
+                <FaEnvelope /> {email}
             </p>
             <p>
-                <FaPhoneAlt /> +46 703 - 30 40 20
+                <FaPhoneAlt /> {number}
             </p>
         </section>
     );

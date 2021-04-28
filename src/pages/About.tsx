@@ -6,6 +6,9 @@ import Skills from "components/pagesComponets/aboutPage/Skills";
 import Details from "components/pagesComponets/aboutPage/Details";
 import List from "components/pagesComponets/aboutPage/List";
 import ListItem from "components/pagesComponets/aboutPage/ListItem";
+import { useDocumentOnce } from "react-firebase-hooks/firestore";
+import firebase from "firebase/app";
+import "firebase/firestore";
 
 const AboutStyle = styled.div`
     color: ${(props) => props.theme.main.textColor};
@@ -19,51 +22,63 @@ const AboutStyle = styled.div`
 `;
 
 const Home = () => {
+    const [snapshot, loading, error] = useDocumentOnce(firebase.firestore().doc("about/work-doc"));
+
     return (
         <AboutStyle>
             <Box1>
                 <ProfilePic>
                     <h1 className="name">Emil Strömdahl</h1>
                 </ProfilePic>
-                <Details />
+                <Details
+                    professtion={snapshot?.data()?.details.professtion}
+                    location={snapshot?.data()?.details.location}
+                    email={snapshot?.data()?.details.email}
+                    number={snapshot?.data()?.details.number}
+                    loading={loading}
+                />
                 <Skills />
             </Box1>
             <Box2 top>
                 <h1>
-                    <MdWork /> <p>Work Experience</p>
+                    <FaCertificate /> <p>Education</p>
                 </h1>
                 <List>
-                    <ListItem title="Lorem ipsum" startdate="jun 2014" enddate="mar 2016">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur repellat eos nisi
-                        ratione ab impedit iusto labore quas cumque reprehenderit exercitationem,
-                    </ListItem>
-                    <ListItem title="Lorem ipsum" startdate="jun 2014" enddate="mar 2016">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur repellat eos nisi
-                        ratione ab impedit iusto labore quas cumque reprehenderit exercitationem,
-                    </ListItem>
-                    <ListItem title="Lorem ipsum" startdate="jun 2014" enddate="mar 2016">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur repellat eos nisi
-                        ratione ab impedit iusto labore quas cumque reprehenderit exercitationem,
-                    </ListItem>
+                    {error && <strong>Error: {JSON.stringify(error)}</strong>}
+                    {loading && <span>Loading...</span>}
+                    {snapshot?.data()?.education.map((item: any) => {
+                        return (
+                            <ListItem
+                                key={item.title}
+                                title={item.title}
+                                startdate={item.startdate}
+                                enddate={item.enddate}
+                            >
+                                {item.body}
+                            </ListItem>
+                        );
+                    })}
                 </List>
             </Box2>
             <Box2>
                 <h1>
-                    <FaCertificate /> <p>Education</p>
+                    <MdWork /> <p>Work Experience</p>
                 </h1>
                 <List>
-                    <ListItem title="Lorem ipsum" startdate="jun 2014" enddate="mar 2016">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur repellat eos nisi
-                        ratione ab impedit iusto labore quas cumque reprehenderit exercitationem,
-                    </ListItem>
-                    <ListItem title="Lorem ipsum" startdate="jun 2014" enddate="mar 2016">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur repellat eos nisi
-                        ratione ab impedit iusto labore quas cumque reprehenderit exercitationem,
-                    </ListItem>
-                    <ListItem title="Lorem ipsum" startdate="jun 2014" enddate="mar 2016">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur repellat eos nisi
-                        ratione ab impedit iusto labore quas cumque reprehenderit exercitationem,
-                    </ListItem>
+                    {error && <strong>Error: {JSON.stringify(error)}</strong>}
+                    {loading && <span>Loading...</span>}
+                    {snapshot?.data()?.work.map((item: any) => {
+                        return (
+                            <ListItem
+                                key={item.title}
+                                title={item.title}
+                                startdate={item.startdate}
+                                enddate={item.enddate}
+                            >
+                                {item.body}
+                            </ListItem>
+                        );
+                    })}
                 </List>
             </Box2>
         </AboutStyle>

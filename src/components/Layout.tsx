@@ -12,12 +12,7 @@ interface ILayoutProps {
 }
 
 const Layout: React.FC<ILayoutProps> = (props: ILayoutProps) => {
-    return (
-        <div>
-            <p>Path: {props.location?.pathname}</p>
-            {props.children}
-        </div>
-    );
+    return <div>{props.children}</div>;
 };
 
 export { Layout };

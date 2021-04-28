@@ -49,7 +49,7 @@ export const Box1 = styled.div`
         display: grid;
         gap: 1em;
     }
-    animation: ${left} 500ms forwards;
+    animation: ${left} 700ms forwards;
 `;
 
 export const Box2 = styled.div<{ top?: boolean }>`
@@ -70,5 +70,5 @@ export const Box2 = styled.div<{ top?: boolean }>`
             margin-top: 0.3em;
         }
     }
-    animation: ${(props) => (props.top ? top : bottom)} 500ms forwards;
+    animation: ${(props) => (props.top ? top : bottom)} 900ms ease;
 `;

@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import pic from "img/Logo.jpg";
 
 const left = keyframes`
     from{
@@ -22,14 +21,15 @@ const bottom = keyframes`
 export const ProfilePic = styled.div`
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-image: url(${pic});
-    background-size: 55%;
-    background-position: center;
-    background-repeat: no-repeat;
     position: relative;
     width: 100%;
     height: 20%;
-    background-color: ${(props) => props.theme.main.scAccent};
+    background-color: ${(props) => props.theme.main.bgAccent};
+    svg {
+        position: absolute;
+        top: 20px;
+        height: 200px;
+    }
     .name {
         position: absolute;
         bottom: 0.2em;

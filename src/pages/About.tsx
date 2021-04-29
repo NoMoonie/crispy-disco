@@ -7,6 +7,8 @@ import Details from "components/pagesComponets/aboutPage/Details";
 import List from "components/pagesComponets/aboutPage/List";
 import ListItem from "components/pagesComponets/aboutPage/ListItem";
 import { useDocumentOnce } from "react-firebase-hooks/firestore";
+import { ReactComponent as Logo } from "img/logo.svg";
+
 import firebase from "firebase/app";
 import "firebase/firestore";
 
@@ -28,6 +30,7 @@ const Home = () => {
         <AboutStyle>
             <Box1>
                 <ProfilePic>
+                    <Logo />
                     <h1 className="name">Emil Strömdahl</h1>
                 </ProfilePic>
                 <Details

@@ -1,38 +1,4 @@
-import styled, { keyframes } from "styled-components";
-
-const top = keyframes`
-    from{
-        transform: translateY(-300%);
-    }
-`;
-
-export const Box1 = styled.div`
-    border-radius: 10px;
-    grid-row: 2/2;
-    display: grid;
-    place-content: center;
-    cursor: default;
-`;
-
-export const Box1inner = styled.span`
-    font-size: 25pt;
-    p {
-        font-size: 12pt;
-        color: ${(props) => props.theme.main.bgAccent};
-        margin-top: 1em;
-    }
-    .one {
-        animation: ${top} 700ms ease;
-    }
-    .two {
-        color: ${(props) => props.theme.main.scbg};
-        animation: ${top} 900ms ease;
-    }
-    .three {
-        animation: ${top} 1100ms ease;
-        border-bottom: 1px solid ${(props) => props.theme.main.scbg};
-    }
-`;
+import styled from "styled-components";
 
 export const Box2 = styled.div`
     position: relative;

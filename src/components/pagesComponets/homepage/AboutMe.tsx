@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { FC } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 interface aboutmeinterface {
@@ -18,6 +19,9 @@ const Box2inner = styled.div`
     p {
         padding-top: 1em;
         line-height: 1.5em;
+        a {
+            color: ${(porps) => porps.theme.main.scbg};
+        }
     }
     position: absolute;
     width: 450px;
@@ -57,7 +61,7 @@ const AboutMe: FC<aboutmeinterface> = ({ open }) => {
                             professional experience.
                         </p>
                         <h1>Hobbies!</h1>
-                        <p>Programming, playing games and making games, cooking food, drawing and making art.</p>
+                        <p>Programming, playing games and making games, cooking food and drawing.</p>
                     </Box2inner>
                 </motion.div>
             )}

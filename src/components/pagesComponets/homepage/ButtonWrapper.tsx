@@ -1,6 +1,5 @@
 import { FaItchIo, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FC } from "react";
 
@@ -9,12 +8,12 @@ interface Wrapperinterface {
     setOpen: Function;
 }
 
-const LinkStyle = styled.div`
+export const LinkStyle = styled.div`
     user-select: none;
-    width: 200px;
-    height: 50px;
+    width: 150px;
+    height: 40px;
     font-size: 20pt;
-    border: ${(props) => props.theme.button.border};
+    border: 2px solid ${(props) => props.theme.button.scbg};
     color: ${(porps) => porps.theme.button.bg};
     cursor: pointer;
     background: none;
@@ -42,8 +41,8 @@ const Wrapper = styled.section`
     display: flex;
     gap: 1em;
     .links {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         cursor: pointer;
         color: ${(props) => props.theme.main.scbg};
         &:hover {
@@ -55,15 +54,15 @@ const Wrapper = styled.section`
 const ButtonWrapper: FC<Wrapperinterface> = ({ open, setOpen }) => {
     return (
         <Wrapper>
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            {/*  <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                 <LinkStyle>
                     <Link className="link-page" to="/about">
-                        About / CV
+                        CV
                     </Link>
                 </LinkStyle>
-            </motion.div>
+            </motion.div> */}
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                <LinkStyle onClick={() => setOpen(!open)}>Who am i</LinkStyle>
+                <LinkStyle onClick={() => setOpen(!open)}>About Me</LinkStyle>
             </motion.div>
             <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
                 <FaItchIo className="links" onClick={() => window.open("https://nomoon404.itch.io/", "_blank")} />

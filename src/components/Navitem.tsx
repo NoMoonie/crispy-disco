@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -38,13 +39,15 @@ const NavitemStyle = styled.li`
 const Navitem: FC<NavitemInterface> = ({ link, ...props }) => {
     const [open, setopen] = useState(false);
     return (
-        <NavitemStyle>
-            {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
-            <Link to={link} className="icon-button" onClick={() => setopen(!open)}>
-                {props.icon}
-            </Link>
-            {open && props.children}
-        </NavitemStyle>
+        <motion.div whileHover={{ y: 10 }} whileTap={{ scale: 0.9 }}>
+            <NavitemStyle>
+                {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
+                <Link to={link} className="icon-button" onClick={() => setopen(!open)}>
+                    {props.icon}
+                </Link>
+                {open && props.children}
+            </NavitemStyle>
+        </motion.div>
     );
 };
 

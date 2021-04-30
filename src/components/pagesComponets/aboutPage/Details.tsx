@@ -40,10 +40,6 @@ const Details: FC<Detailsinterface> = ({ professtion, location, email, number, l
             <p className="links">
                 <FaGithub /> github.com/NoMoonie
             </p>
-
-            {/* <p>
-                <FaPhoneAlt /> {number}
-            </p> */}
         </Section>
     );
 };

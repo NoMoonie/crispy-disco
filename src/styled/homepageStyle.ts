@@ -28,12 +28,6 @@ export const Box1 = styled.div`
     cursor: default;
 `;
 
-export const ButtonWrapper = styled.section`
-    padding-top: 1em;
-    display: flex;
-    gap: 1em;
-`;
-
 export const Box1inner = styled.span`
     font-size: 25pt;
     p {
@@ -94,11 +88,33 @@ export const LinkStyle = styled.div`
     border-radius: 5px;
     display: grid;
     place-items: center;
-    .link {
+    .link-page {
         display: grid;
         place-items: center;
         height: 100%;
         width: 100%;
         color: ${(porps) => porps.theme.button.bg};
+        &:hover {
+            color: ${(props) => props.theme.main.scAccent};
+        }
+    }
+    &:hover {
+        color: ${(props) => props.theme.main.scAccent};
+        border-color: ${(props) => props.theme.main.scAccent};
+    }
+`;
+
+export const ButtonWrapper = styled.section`
+    padding-top: 1em;
+    display: flex;
+    gap: 1em;
+    .links {
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        color: ${(props) => props.theme.main.scbg};
+        &:hover {
+            color: ${(props) => props.theme.main.scAccent};
+        }
     }
 `;

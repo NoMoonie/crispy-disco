@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Box2 } from "styled/homepageStyle";
 import AboutMe from "components/pagesComponets/homepage/AboutMe";
 import { ReactComponent as Logo } from "img/logo.svg";
 import { useState } from "react";
@@ -15,6 +14,19 @@ const HomeStyle = styled.div`
     overflow: hidden;
     margin: 1em;
     gap: 1em;
+`;
+
+const Box2 = styled.div`
+    position: relative;
+    grid-row: 2/2;
+    display: grid;
+    place-content: left;
+    svg {
+        position: absolute;
+        bottom: 1em;
+        transform: rotate(-15deg) scale(1.5);
+        z-index: -1;
+    }
 `;
 
 const Home = () => {

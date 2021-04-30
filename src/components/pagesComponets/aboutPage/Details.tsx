@@ -37,7 +37,7 @@ const Details: FC<Detailsinterface> = ({ professtion, location, email, number, l
             <p className="links" onClick={() => window.open("https://nomoon404.itch.io/", "_blank")}>
                 <FaItchIo /> nomoon404.itch.io
             </p>
-            <p className="links">
+            <p className="links" onClick={() => window.open("https://github.com/NoMoonie", "_blank")}>
                 <FaGithub /> github.com/NoMoonie
             </p>
         </Section>

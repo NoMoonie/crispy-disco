@@ -35,8 +35,8 @@ const Home = () => {
                         </Link>
                     </LinkStyle>
                     <LinkStyle onClick={() => setOpen(!open)}>Who am i</LinkStyle>
-                    <FaItchIo className="links" />
-                    <FaGithub className="links" />
+                    <FaItchIo className="links" onClick={() => window.open("https://nomoon404.itch.io/", "_blank")} />
+                    <FaGithub className="links" onClick={() => window.open("https://github.com/NoMoonie", "_blank")} />
                 </ButtonWrapper>
             </Box1>
             <Box2>

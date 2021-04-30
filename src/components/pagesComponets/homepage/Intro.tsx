@@ -1,17 +1,12 @@
 import ButtonWrapper from "components/pagesComponets/homepage/ButtonWrapper";
+import { motion } from "framer-motion";
 import { FC } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 interface Homepage {
     open: boolean;
     setOpen: Function;
 }
-
-const top = keyframes`
-    from{
-        transform: translateY(-300%);
-    }
-`;
 
 const Box1 = styled.div`
     border-radius: 10px;
@@ -28,27 +23,39 @@ const Box1inner = styled.span`
         color: ${(props) => props.theme.main.bgAccent};
         margin-top: 1em;
     }
-    .one {
-        animation: ${top} 700ms ease;
-    }
-    .two {
+    span {
         color: ${(props) => props.theme.main.scbg};
-        animation: ${top} 900ms ease;
-    }
-    .three {
-        animation: ${top} 1100ms ease;
-        border-bottom: 1px solid ${(props) => props.theme.main.scbg};
     }
 `;
+
+const container = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+            delayChildren: 0.1,
+        },
+    },
+};
+
+const stagerdItems = {
+    hidden: { y: -200 },
+    show: { y: 0 },
+};
 
 const Intro: FC<Homepage> = ({ open, setOpen }) => {
     return (
         <Box1>
             <Box1inner>
-                <h1 className="one">Hi,</h1>
-                <h1 className="two">I´m Emil,</h1>
-                <h1 className="three">web developer.</h1>
-                <p>Back end Debeloper / Front end Developer / React / Electronjs / Wordpress </p>
+                <motion.div variants={container} initial="hidden" animate="show">
+                    <motion.h1 variants={stagerdItems}>Hi,</motion.h1>
+                    <motion.h1 variants={stagerdItems}>
+                        I´m <span>Emil</span>,
+                    </motion.h1>
+                    <motion.h1 variants={stagerdItems}>web developer.</motion.h1>
+                    <p>Back end Debeloper / Front end Developer / React / Electronjs / Wordpress </p>
+                </motion.div>
             </Box1inner>
             <ButtonWrapper open={open} setOpen={setOpen} />
         </Box1>

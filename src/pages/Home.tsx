@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Box1, Box1inner, Box2, Box2inner, LinkStyle, ButtonWrapper } from "styled/homepageStyle";
 import { ReactComponent as Logo } from "img/logo.svg";
 import { useState } from "react";
+import { FaItchIo, FaGithub } from "react-icons/fa";
 
 const HomeStyle = styled.div`
     color: ${(props) => props.theme.main.textColor};
@@ -29,11 +30,13 @@ const Home = () => {
                 </Box1inner>
                 <ButtonWrapper>
                     <LinkStyle>
-                        <Link className="link" to="/about">
+                        <Link className="link-page" to="/about">
                             About / CV
                         </Link>
                     </LinkStyle>
                     <LinkStyle onClick={() => setOpen(!open)}>Who am i</LinkStyle>
+                    <FaItchIo className="links" />
+                    <FaGithub className="links" />
                 </ButtonWrapper>
             </Box1>
             <Box2>

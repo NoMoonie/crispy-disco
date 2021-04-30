@@ -5,7 +5,8 @@
         "scbg": "#fc5185",
         "scAccent": "#96586B",
         "textColor": "#dadce1",
-        "border": "1px solid #fc5185"
+        "border": "1px solid #fc5185",
+        "sc": "#3223"
     },
     "navbar": {
         "bg": "#121212",

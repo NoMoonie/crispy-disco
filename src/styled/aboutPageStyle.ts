@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 const left = keyframes`
     from{
-        transform: translateX(-100%);
+        transform: translateX(-200%);
     }
 `;
 
@@ -49,7 +49,7 @@ export const Box1 = styled.div`
         display: grid;
         gap: 1em;
     }
-    animation: ${left} 700ms forwards;
+    animation: ${left} 900ms forwards;
 `;
 
 export const Box2 = styled.div<{ top?: boolean }>`

@@ -1,53 +1,63 @@
 import { AnimatePresence, motion } from "framer-motion";
-
 import { FC } from "react";
-import { Box2inner } from "styled/homepageStyle";
+import styled from "styled-components";
 
 interface aboutmeinterface {
     open: boolean;
 }
 
+const Box2inner = styled.div`
+    /* background-color: ${(porps) => porps.theme.main.sc}; */
+    border: ${(porps) => porps.theme.main.border};
+    border-radius: 10px;
+    padding: 1em;
+    h1 {
+        color: ${(porps) => porps.theme.main.scbg};
+        margin-top: 1em;
+    }
+    p {
+        padding-top: 1em;
+        line-height: 1.5em;
+    }
+    position: absolute;
+    width: 450px;
+    bottom: 30px;
+    left: 520px;
+`;
+
+const motions = {
+    hidden: {
+        opacity: 0,
+        y: -50,
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+    },
+    removed: {
+        opacity: 0,
+        y: -50,
+    },
+};
+
 const AboutMe: FC<aboutmeinterface> = ({ open }) => {
     return (
         <AnimatePresence>
             {open && (
-                <motion.div
-                    variants={{
-                        hidden: {
-                            opacity: 0,
-                            x: -50,
-                        },
-                        visible: {
-                            opacity: 1,
-                            x: 0,
-                        },
-                        removed: {
-                            opacity: 0,
-                            x: 50,
-                        },
-                    }}
-                    initial="hidden"
-                    animate="visible"
-                    exit="removed"
-                >
+                <motion.div variants={motions} initial="hidden" animate="visible" exit="removed">
                     <Box2inner>
-                        <h1>About me!</h1>
+                        <h1>Who am i?!</h1>
+                        <p>Yes! whom am i. I'm a 22 year old guy from sweden i'm kind and creative.</p>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto illo ad quos animi eos,
-                            quaerat odit illum. Quidem incidunt, reiciendis delectus nisi corrupti molestias. Nobis,
-                            quaerat ut asperiores perferendis veniam officiis ea ducimus quasi dolorem tenetur eaque
-                            eligendi exercitationem quas porro. Consequatur odit tempora quod, corrupti nihil eligendi
-                            distinctio quia nesciunt architecto, dolor ipsum magnam ratione. Beatae quaerat recusandae
-                            hic ut possimus rem assumenda nostrum officia eligendi voluptas, porro blanditiis doloremque
-                            quos tenetur illum voluptatem fugit reprehenderit voluptatum similique velit. Inventore,
-                            similique beatae quibusdam quos error suscipit facere provident natus quasi consequatur
-                            neque eum itaque dolor! Atque numquam eligendi harum nostrum blanditiis, error voluptas
-                            perspiciatis. Praesentium amet impedit vel? Sequi, fugiat ducimus optio labore
-                            necessitatibus consequuntur voluptatibus eius iure deleniti quidem commodi quae mollitia.
-                            Earum error porro voluptas doloremque iste exercitationem, nisi facere illo facilis
-                            recusandae placeat ducimus consequuntur ea voluptate delectus, quo sunt libero esse in iusto
-                            saepe tempora?
+                            Things i'm most passionate about is web develepment In terms of the work. Love to code it's
+                            fun to make things that have funktionality, or figureout how stuff works/funktions.
                         </p>
+                        <p>
+                            I'm currently looking for work/intership as a junior web developer to get myself more
+                            professional experience.
+                        </p>
+                        <h1>Hobbies!</h1>
+                        <p>Programming, playing games and making games, cooking food, drawing and making art.</p>
                     </Box2inner>
                 </motion.div>
             )}

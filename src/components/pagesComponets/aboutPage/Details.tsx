@@ -1,6 +1,7 @@
 import { MdWork } from "react-icons/md";
-import { FaHome, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { FaHome, FaEnvelope, FaItchIo, FaGithub } from "react-icons/fa";
 import { FC } from "react";
+import styled from "styled-components";
 
 interface Detailsinterface {
     professtion: string;
@@ -10,9 +11,19 @@ interface Detailsinterface {
     loading: boolean;
 }
 
+const Section = styled.section`
+    .links {
+        cursor: pointer;
+        color: ${(props) => props.theme.main.scbg};
+        &:hover {
+            color: ${(props) => props.theme.main.scAccent};
+        }
+    }
+`;
+
 const Details: FC<Detailsinterface> = ({ professtion, location, email, number, loading }) => {
     return (
-        <section>
+        <Section>
             {loading ? <h1>Loading...</h1> : <h1>Details</h1>}
             <p>
                 <MdWork /> {professtion}
@@ -23,10 +34,17 @@ const Details: FC<Detailsinterface> = ({ professtion, location, email, number, l
             <p>
                 <FaEnvelope /> {email}
             </p>
-            <p>
-                <FaPhoneAlt /> {number}
+            <p className="links" onClick={() => window.open("https://nomoon404.itch.io/", "_blank")}>
+                <FaItchIo /> nomoon404.itch.io
             </p>
-        </section>
+            <p className="links">
+                <FaGithub /> github.com/NoMoonie
+            </p>
+
+            {/* <p>
+                <FaPhoneAlt /> {number}
+            </p> */}
+        </Section>
     );
 };
 

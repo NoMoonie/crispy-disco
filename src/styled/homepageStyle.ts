@@ -50,6 +50,7 @@ export const Box1inner = styled.span`
     }
     .three {
         animation: ${top} 1100ms ease;
+        border-bottom: 1px solid ${(props) => props.theme.main.scbg};
     }
 `;
 

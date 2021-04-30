@@ -24,7 +24,6 @@ export const ProfilePic = styled.div`
     position: relative;
     width: 100%;
     height: 20%;
-    background-color: ${(props) => props.theme.main.bgAccent};
     svg {
         position: absolute;
         top: 20px;
@@ -39,9 +38,7 @@ export const ProfilePic = styled.div`
 
 export const Box1 = styled.div`
     border-radius: 10px;
-    border: ${(props) => props.theme.main.border};
     grid-row: 1/3;
-    background-color: ${(props) => props.theme.main.bg};
     margin-left: 10em;
     section {
         border-top: ${(props) => props.theme.main.border};
@@ -54,9 +51,7 @@ export const Box1 = styled.div`
 
 export const Box2 = styled.div<{ top?: boolean }>`
     border-radius: 10px;
-    border: ${(props) => props.theme.main.border};
     grid-column: 2/4;
-    background-color: ${(props) => props.theme.main.bg};
     margin-right: 10em;
     svg {
         height: 50px;

@@ -6,20 +6,6 @@ const top = keyframes`
     }
 `;
 
-const Whoami = keyframes`
-    from{
-        transform: translateX(50%);
-        opacity: 0;
-    }
-`;
-
-const title = keyframes`
-    from{
-        opacity: 0;
-        transform: translateX(-50%);
-    }
-`;
-
 export const Box1 = styled.div`
     border-radius: 10px;
     grid-row: 2/2;
@@ -57,64 +43,16 @@ export const Box2 = styled.div`
         position: absolute;
         bottom: 1em;
         transform: rotate(-15deg) scale(1.5);
+        z-index: -1;
     }
 `;
 
 export const Box2inner = styled.div`
-    z-index: 0;
     background-color: ${(porps) => porps.theme.main.bg};
     border: ${(porps) => porps.theme.main.border};
     border-radius: 10px;
     padding: 2em;
-    animation: ${Whoami} 700ms ease;
-    h1 {
-        animation: ${title} 900ms ease;
-    }
     p {
-        animation: ${title} 1100ms ease;
         padding-top: 1em;
-    }
-`;
-
-export const LinkStyle = styled.div`
-    user-select: none;
-    width: 200px;
-    height: 50px;
-    font-size: 20pt;
-    border: ${(props) => props.theme.button.border};
-    color: ${(porps) => porps.theme.button.bg};
-    cursor: pointer;
-    background: none;
-    border-radius: 5px;
-    display: grid;
-    place-items: center;
-    .link-page {
-        display: grid;
-        place-items: center;
-        height: 100%;
-        width: 100%;
-        color: ${(porps) => porps.theme.button.bg};
-        &:hover {
-            color: ${(props) => props.theme.main.scAccent};
-        }
-    }
-    &:hover {
-        color: ${(props) => props.theme.main.scAccent};
-        border-color: ${(props) => props.theme.main.scAccent};
-    }
-`;
-
-export const ButtonWrapper = styled.section`
-    padding-top: 1em;
-    display: flex;
-    gap: 1em;
-    .links {
-        width: 50px;
-        height: 50px;
-        cursor: pointer;
-        color: ${(props) => props.theme.main.scbg};
-        &:hover {
-            color: ${(props) => props.theme.main.scAccent};
-        }
     }
 `;

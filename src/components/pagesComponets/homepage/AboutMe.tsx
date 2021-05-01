@@ -7,24 +7,19 @@ interface aboutmeinterface {
 }
 
 const Box2inner = styled.div`
-    /* background-color: ${(porps) => porps.theme.main.sc}; */
     border: ${(porps) => porps.theme.main.border};
     border-radius: 10px;
     padding: 1em;
     h1 {
         color: ${(porps) => porps.theme.main.scbg};
-        margin-top: 1em;
     }
     p {
-        padding-top: 1em;
         line-height: 1.5em;
-        a {
-            color: ${(porps) => porps.theme.main.scbg};
-        }
+        margin-top: 1em;
     }
     position: absolute;
     width: 450px;
-    bottom: 30px;
+    bottom: 100px;
     left: 520px;
 `;
 

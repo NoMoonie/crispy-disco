@@ -1,16 +1,15 @@
 import styled from "styled-components";
 import { Box1, Box2, ProfilePic } from "styled/aboutPageStyle";
 import { MdWork } from "react-icons/md";
-import { FaCertificate } from "react-icons/fa";
 import Skills from "components/pagesComponets/aboutPage/Skills";
 import Details from "components/pagesComponets/aboutPage/Details";
-import List from "components/pagesComponets/aboutPage/List";
-import ListItem from "components/pagesComponets/aboutPage/ListItem";
 import { useDocumentOnce } from "react-firebase-hooks/firestore";
 import { ReactComponent as Logo } from "img/logo.svg";
 
 import firebase from "firebase/app";
 import "firebase/firestore";
+import Education from "components/pagesComponets/aboutPage/Education";
+import Work from "components/pagesComponets/aboutPage/Work";
 
 const AboutStyle = styled.div`
     color: ${(props) => props.theme.main.textColor};
@@ -42,48 +41,8 @@ const Home = () => {
                 />
                 <Skills />
             </Box1>
-            <Box2 top>
-                <h1>
-                    <FaCertificate /> <p>Education</p>
-                </h1>
-                <List>
-                    {error && <strong>Error: {JSON.stringify(error)}</strong>}
-                    {loading && <span>Loading...</span>}
-                    {snapshot?.data()?.education.map((item: any) => {
-                        return (
-                            <ListItem
-                                key={item.title}
-                                title={item.title}
-                                startdate={item.startdate}
-                                enddate={item.enddate}
-                            >
-                                {item.body}
-                            </ListItem>
-                        );
-                    })}
-                </List>
-            </Box2>
-            <Box2>
-                <h1>
-                    <MdWork /> <p>Work Experience</p>
-                </h1>
-                <List>
-                    {error && <strong>Error: {JSON.stringify(error)}</strong>}
-                    {loading && <span>Loading...</span>}
-                    {snapshot?.data()?.work.map((item: any) => {
-                        return (
-                            <ListItem
-                                key={item.title}
-                                title={item.title}
-                                startdate={item.startdate}
-                                enddate={item.enddate}
-                            >
-                                {item.body}
-                            </ListItem>
-                        );
-                    })}
-                </List>
-            </Box2>
+            <Education error={error} loading={loading} snapshot={snapshot} />
+            <Work error={error} loading={loading} snapshot={snapshot} />
         </AboutStyle>
     );
 };

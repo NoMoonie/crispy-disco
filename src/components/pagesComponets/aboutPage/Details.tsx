@@ -24,7 +24,7 @@ const Section = styled.section`
 const Details: FC<Detailsinterface> = ({ professtion, location, email, number, loading }) => {
     return (
         <Section>
-            {loading ? <h1>Loading...</h1> : <h1>Details</h1>}
+            <h1>Details</h1>
             <p>
                 <MdWork /> {professtion}
             </p>

@@ -1,22 +1,4 @@
-import styled, { keyframes } from "styled-components";
-
-const left = keyframes`
-    from{
-        transform: translateX(-200%);
-    }
-`;
-
-const top = keyframes`
-    from{
-        transform: translateY(-100%);
-    }
-`;
-
-const bottom = keyframes`
-    from{
-        transform: translateY(100%);
-    }
-`;
+import styled from "styled-components";
 
 export const ProfilePic = styled.div`
     border-top-left-radius: 10px;
@@ -46,7 +28,6 @@ export const Box1 = styled.div`
         display: grid;
         gap: 1em;
     }
-    animation: ${left} 900ms forwards;
 `;
 
 export const Box2 = styled.div<{ top?: boolean }>`
@@ -65,5 +46,4 @@ export const Box2 = styled.div<{ top?: boolean }>`
             margin-top: 0.3em;
         }
     }
-    animation: ${(props) => (props.top ? top : bottom)} 900ms ease;
 `;

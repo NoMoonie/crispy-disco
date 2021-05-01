@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { Box1, Box2, ProfilePic } from "styled/aboutPageStyle";
-import { MdWork } from "react-icons/md";
+import { Box1, ProfilePic } from "styled/aboutPageStyle";
 import Skills from "components/pagesComponets/aboutPage/Skills";
 import Details from "components/pagesComponets/aboutPage/Details";
 import { useDocumentOnce } from "react-firebase-hooks/firestore";

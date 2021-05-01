@@ -1,3 +1,4 @@
+import Loading from "components/Loading";
 import { FC } from "react";
 import { MdWork } from "react-icons/md";
 import { Box2 } from "styled/aboutPageStyle";
@@ -11,9 +12,9 @@ const Work: FC<dbinterface> = ({ error, loading, snapshot }) => {
             <h1>
                 <MdWork /> <p>Work Experience</p>
             </h1>
-            <List>
-                {/* {error && <strong>Error: {JSON.stringify(error)}</strong>}
-                {loading && <span>Loading...</span>} */}
+            <List loading={loading}>
+                {/* {error && <strong>Error: {JSON.stringify(error)}</strong>} */}
+                {loading && <Loading />}
                 {snapshot?.data()?.work.map((item: any) => {
                     return (
                         <ListItem key={item.title} title={item.title} startdate={item.startdate} enddate={item.enddate}>

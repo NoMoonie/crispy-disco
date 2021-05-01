@@ -1,3 +1,4 @@
+import Loading from "components/Loading";
 import { FC } from "react";
 import { FaCertificate } from "react-icons/fa";
 import { Box2 } from "styled/aboutPageStyle";
@@ -12,13 +13,13 @@ export interface dbinterface {
 
 const Education: FC<dbinterface> = ({ error, loading, snapshot }) => {
     return (
-        <Box2 top>
+        <Box2>
             <h1>
                 <FaCertificate /> <p>Education</p>
             </h1>
-            <List>
-                {/* {error && <strong>Error: {JSON.stringify(error)}</strong>}
-                {loading && <span>Loading...</span>} */}
+            <List loading={loading}>
+                {/*  {error && <strong>Error: {JSON.stringify(error)}</strong>} */}
+                {loading && <Loading />}
                 {snapshot?.data()?.education.map((item: any) => {
                     return (
                         <ListItem key={item.title} title={item.title} startdate={item.startdate} enddate={item.enddate}>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 
 const ContactStyle = styled.div`
@@ -22,6 +23,9 @@ const Box1 = styled.div`
 `;
 
 const Contact = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <ContactStyle>
             <Box1>

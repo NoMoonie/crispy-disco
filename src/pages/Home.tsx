@@ -3,6 +3,7 @@ import AboutMe from "components/pagesComponets/homepage/AboutMe";
 import { ReactComponent as Logo } from "img/logo.svg";
 import { useState } from "react";
 import Intro from "components/pagesComponets/homepage/Intro";
+import { useEffect } from "react";
 
 const HomeStyle = styled.div`
     color: ${(props) => props.theme.main.textColor};
@@ -31,6 +32,9 @@ const Box2 = styled.div`
 
 const Home = () => {
     const [open, setOpen] = useState(false);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <HomeStyle>
             <Intro open={open} setOpen={setOpen} />

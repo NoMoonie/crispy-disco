@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 
 const GalleryStyle = styled.div`
@@ -26,6 +27,9 @@ const Wrapper = styled.div`
 `;
 
 const Gallery = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <GalleryStyle>
             <Wrapper></Wrapper>

@@ -9,6 +9,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import Education from "components/pagesComponets/aboutPage/Education";
 import Work from "components/pagesComponets/aboutPage/Work";
+import { useEffect } from "react";
 
 const AboutStyle = styled.div`
     color: ${(props) => props.theme.main.textColor};
@@ -23,6 +24,9 @@ const AboutStyle = styled.div`
 
 const Home = () => {
     const [snapshot, loading, error] = useDocumentOnce(firebase.firestore().doc("about/work-doc"));
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <AboutStyle>

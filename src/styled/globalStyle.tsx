@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     body{
         height: 100%;
         background-color: #110a1a;
+        overflow-x: hidden; 
     }
     ul{
         list-style: none;

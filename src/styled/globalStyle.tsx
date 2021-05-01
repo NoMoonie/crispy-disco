@@ -21,16 +21,17 @@ const GlobalStyle = createGlobalStyle`
     
     ::-webkit-scrollbar {
         width: 10px;
+        border-radius: 10px;
     }
 
     /* Track */
     ::-webkit-scrollbar-track {
-        background: #242526
+        background: #3133;
     }
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        background: #121212;
+        background: #96586B;
     }
 
     /* Handle on hover */

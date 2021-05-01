@@ -6,7 +6,8 @@
         "scAccent": "#96586B",
         "textColor": "#dadce1",
         "border": "1px solid #fc5185",
-        "sc": "#3223"
+        "sc": "#3223",
+        "bodybg": "#110a1a"
     },
     "navbar": {
         "bg": "#121212",

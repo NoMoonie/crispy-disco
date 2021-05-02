@@ -16,22 +16,28 @@ const ListDate = styled.div`
         height: 20px;
     }
     p {
-        margin-left: 1em;
+        margin-left: 0.5em;
     }
+`;
+
+const Section = styled.section`
+    /* border-right: ${(props) => props.theme.main.border};
+    border-bottom: ${(props) => props.theme.main.border}; */
+    border-radius: 10px;
 `;
 
 const WorkItem: FC<ListItemInterface> = ({ title, startdate, enddate, children }) => {
     return (
-        <section>
-            <h1 style={{ fontSize: "14pt" }}>{title}</h1>
+        <Section>
+            <h2 style={{ fontSize: "13pt" }}>{title}</h2>
             <ListDate>
                 <FaCalendarAlt className="cal" />
                 <p>
                     {startdate} - {enddate}
                 </p>
             </ListDate>
-            <p style={{ marginTop: "1em" }}>{children}</p>
-        </section>
+            <p style={{ marginTop: "0.1em" }}>{children}</p>
+        </Section>
     );
 };
 

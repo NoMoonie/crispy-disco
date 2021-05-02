@@ -5,13 +5,10 @@ interface Listinterface {
 }
 
 const Box2Inner = styled.div<{ loading: boolean }>`
-    border-top: ${(props) => props.theme.main.border};
-    padding: 2em;
     display: grid;
     place-content: ${(props) => (props.loading ? "center" : "")};
-    gap: 2em;
-    overflow: auto;
-    max-height: 50vh;
+    gap: 1em;
+    margin-top: 1em;
 `;
 
 const List: FC<Listinterface> = ({ children, loading }) => {

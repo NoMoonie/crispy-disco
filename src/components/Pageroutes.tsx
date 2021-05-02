@@ -12,7 +12,7 @@ interface LocationState {
     };
 }
 
-const Pagetransiton = {
+export const Pagetransiton = {
     init: {
         opacity: 0,
         x: "100vw",
@@ -27,7 +27,7 @@ const Pagetransiton = {
     },
 };
 
-const transition = {
+export const transition = {
     duration: 0.5,
 };
 
@@ -37,59 +37,19 @@ const Pageroutes = () => {
         <AnimatePresence exitBeforeEnter initial={false}>
             <Switch location={location} key={location.pathname}>
                 <Route exact path="/">
-                    <motion.div
-                        variants={Pagetransiton}
-                        initial="init"
-                        animate="show"
-                        exit="hidden"
-                        transition={transition}
-                    >
-                        <Home />
-                    </motion.div>
+                    <Home />
                 </Route>
                 <Route exact path="/about">
-                    <motion.div
-                        variants={Pagetransiton}
-                        initial="init"
-                        animate="show"
-                        exit="hidden"
-                        transition={transition}
-                    >
-                        <About />
-                    </motion.div>
+                    <About />
                 </Route>
                 <Route exact path="/projekts">
-                    <motion.div
-                        variants={Pagetransiton}
-                        initial="init"
-                        animate="show"
-                        exit="hidden"
-                        transition={transition}
-                    >
-                        <Projekts />
-                    </motion.div>
+                    <Projekts />
                 </Route>
                 <Route exact path="/gallery">
-                    <motion.div
-                        variants={Pagetransiton}
-                        initial="init"
-                        animate="show"
-                        exit="hidden"
-                        transition={transition}
-                    >
-                        <Gallery />
-                    </motion.div>
+                    <Gallery />
                 </Route>
                 <Route exact path="/contact">
-                    <motion.div
-                        variants={Pagetransiton}
-                        initial="init"
-                        animate="show"
-                        exit="hidden"
-                        transition={transition}
-                    >
-                        <Contact />
-                    </motion.div>
+                    <Contact />
                 </Route>
             </Switch>
         </AnimatePresence>

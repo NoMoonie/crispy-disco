@@ -6,7 +6,7 @@ interface aboutmeinterface {
     open: boolean;
 }
 
-const Box2inner = styled.div`
+const Box2inner = styled(motion.div)`
     border: ${(porps) => porps.theme.main.border};
     border-radius: 10px;
     padding: 1em;
@@ -42,22 +42,20 @@ const AboutMe: FC<aboutmeinterface> = ({ open }) => {
     return (
         <AnimatePresence>
             {open && (
-                <motion.div variants={motions} initial="hidden" animate="visible" exit="removed">
-                    <Box2inner>
-                        <h1>Who am i?!</h1>
-                        <p>Yes! whom am i. I'm a 22 year old guy from sweden i'm kind and creative.</p>
-                        <p>
-                            Things i'm most passionate about is web develepment In terms of the work. Love to code it's
-                            fun to make things that have funktionality, or figureout how stuff works/funktions.
-                        </p>
-                        <p>
-                            I'm currently looking for work/intership as a junior web developer to get myself more
-                            professional experience.
-                        </p>
-                        <h1>Hobbies!</h1>
-                        <p>Programming, playing games and making games, cooking food and drawing.</p>
-                    </Box2inner>
-                </motion.div>
+                <Box2inner variants={motions} initial="hidden" animate="visible" exit="removed">
+                    <h1>Who am i?!</h1>
+                    <p>Yes! whom am i. I'm a 22 year old guy from sweden i'm kind and creative.</p>
+                    <p>
+                        Things i'm most passionate about is web develepment In terms of the work. Love to code it's fun
+                        to make things that have funktionality, or figureout how stuff works/funktions.
+                    </p>
+                    <p>
+                        I'm currently looking for work/intership as a junior web developer to get myself more
+                        professional experience.
+                    </p>
+                    <h1>Hobbies!</h1>
+                    <p>Programming, playing games and making games, cooking food and drawing.</p>
+                </Box2inner>
             )}
         </AnimatePresence>
     );

@@ -1,19 +1,21 @@
 import styled from "styled-components";
-import { Box1, ProfilePic } from "styled/aboutPageStyle";
 import Skills from "components/pagesComponets/aboutPage/Skills";
 import Details from "components/pagesComponets/aboutPage/Details";
-import { useDocumentOnce } from "react-firebase-hooks/firestore";
+import Education from "components/pagesComponets/aboutPage/Education";
+import Work from "components/pagesComponets/aboutPage/Work";
+import { Box1, ProfilePic } from "styled/aboutPageStyle";
 import { ReactComponent as Logo } from "img/logo.svg";
 import { FaCode, FaGamepad, FaPencilAlt } from "react-icons/fa";
 import { GiCookingPot } from "react-icons/gi";
 
+import { useEffect } from "react";
+import { useDocumentOnce } from "react-firebase-hooks/firestore";
 import firebase from "firebase/app";
 import "firebase/firestore";
-import Education from "components/pagesComponets/aboutPage/Education";
-import Work from "components/pagesComponets/aboutPage/Work";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
+import { Pagetransiton, transition } from "components/Pageroutes";
 
-const AboutStyle = styled.div`
+const AboutStyle = styled(motion.div)`
     color: ${(props) => props.theme.main.textColor};
     display: grid;
     grid-template-columns: 0.7fr 1fr 1fr;
@@ -73,7 +75,7 @@ const Home = () => {
     }, []);
 
     return (
-        <AboutStyle>
+        <AboutStyle variants={Pagetransiton} initial="init" animate="show" exit="hidden" transition={transition}>
             <Box1>
                 <ProfilePic>
                     <Logo />

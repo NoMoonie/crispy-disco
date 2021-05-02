@@ -16,7 +16,7 @@ const Box1 = styled.div`
     cursor: default;
 `;
 
-const Box1inner = styled.span`
+const Box1inner = styled(motion.span)`
     font-size: 25pt;
     p {
         font-size: 12pt;
@@ -52,22 +52,20 @@ const transitions = {
 const Intro: FC<Homepage> = ({ open, setOpen }) => {
     return (
         <Box1>
-            <Box1inner>
-                <AnimatePresence>
-                    <motion.div variants={container} initial="hidden" animate="show">
-                        <motion.h1 transition={transitions} variants={stagerdItems}>
-                            Hi,
-                        </motion.h1>
-                        <motion.h1 transition={transitions} variants={stagerdItems}>
-                            I´m <span>Emil</span>,
-                        </motion.h1>
-                        <motion.h1 transition={transitions} variants={stagerdItems}>
-                            web developer.
-                        </motion.h1>
-                        <p>Back end Debeloper / Front end Developer / React / Electronjs / Wordpress </p>
-                    </motion.div>
-                </AnimatePresence>
-            </Box1inner>
+            <AnimatePresence>
+                <Box1inner variants={container} initial="hidden" animate="show">
+                    <motion.h1 transition={transitions} variants={stagerdItems}>
+                        Hi,
+                    </motion.h1>
+                    <motion.h1 transition={transitions} variants={stagerdItems}>
+                        I´m <span>Emil</span>,
+                    </motion.h1>
+                    <motion.h1 transition={transitions} variants={stagerdItems}>
+                        web developer.
+                    </motion.h1>
+                    <p>Back end Debeloper / Front end Developer / React / Electronjs / Wordpress </p>
+                </Box1inner>
+            </AnimatePresence>
             <ButtonWrapper open={open} setOpen={setOpen} />
         </Box1>
     );

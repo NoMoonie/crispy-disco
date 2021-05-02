@@ -1,7 +1,9 @@
+import { Pagetransiton, transition } from "components/Pageroutes";
+import { motion } from "framer-motion";
 import { useEffect } from "react";
 import styled from "styled-components";
 
-const ContactStyle = styled.div`
+const ContactStyle = styled(motion.div)`
     color: ${(props) => props.theme.main.textColor};
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
@@ -27,7 +29,7 @@ const Contact = () => {
         window.scrollTo(0, 0);
     }, []);
     return (
-        <ContactStyle>
+        <ContactStyle variants={Pagetransiton} initial="init" animate="show" exit="hidden" transition={transition}>
             <Box1>
                 <h1>
                     Contact <br /> Comming soon!

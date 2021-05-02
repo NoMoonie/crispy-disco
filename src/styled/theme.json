@@ -14,7 +14,7 @@
         "bgAccent": "#313131",
         "textColor": "#dadce1",
         "navSize": "60px",
-        "border": "1px solid #fc5185",
+        "border": "1px solid #313131",
         "borderRadius": "8px",
         "speed": "500ms",
         "navitem": {

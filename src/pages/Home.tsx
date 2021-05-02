@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import AboutMe from "components/pagesComponets/homepage/AboutMe";
 import { ReactComponent as Logo } from "img/logo.svg";
 import { useState } from "react";
 import Intro from "components/pagesComponets/homepage/Intro";
@@ -40,7 +39,6 @@ const Home = () => {
             <Intro open={open} setOpen={setOpen} />
             <Box2>
                 <Logo />
-                <AboutMe open={open} />
             </Box2>
         </HomeStyle>
     );

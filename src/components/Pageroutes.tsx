@@ -15,7 +15,7 @@ interface LocationState {
 const Pagetransiton = {
     init: {
         opacity: 0,
-        x: "-100vw",
+        x: "100vw",
     },
     show: {
         opacity: 1,
@@ -23,7 +23,7 @@ const Pagetransiton = {
     },
     hidden: {
         opacity: 0,
-        x: "100vw",
+        x: "-100vw",
     },
 };
 

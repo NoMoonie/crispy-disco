@@ -2,39 +2,12 @@ import { FaItchIo, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { FC } from "react";
+import Button from "components/Button";
 
 interface Wrapperinterface {
     open: boolean;
     setOpen: Function;
 }
-
-export const LinkStyle = styled.div`
-    user-select: none;
-    width: 150px;
-    height: 40px;
-    font-size: 20pt;
-    border: 2px solid ${(props) => props.theme.button.scbg};
-    color: ${(porps) => porps.theme.button.bg};
-    cursor: pointer;
-    background: none;
-    border-radius: 5px;
-    display: grid;
-    place-items: center;
-    .link-page {
-        display: grid;
-        place-items: center;
-        height: 100%;
-        width: 100%;
-        color: ${(porps) => porps.theme.button.bg};
-        &:hover {
-            color: ${(props) => props.theme.main.scAccent};
-        }
-    }
-    &:hover {
-        color: ${(props) => props.theme.main.scAccent};
-        border-color: ${(props) => props.theme.main.scAccent};
-    }
-`;
 
 const Wrapper = styled.section`
     padding-top: 1em;
@@ -54,16 +27,8 @@ const Wrapper = styled.section`
 const ButtonWrapper: FC<Wrapperinterface> = ({ open, setOpen }) => {
     return (
         <Wrapper>
-            {/*  <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                <LinkStyle>
-                    <Link className="link-page" to="/about">
-                        CV
-                    </Link>
-                </LinkStyle>
-            </motion.div> */}
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                <LinkStyle onClick={() => setOpen(!open)}>About Me</LinkStyle>
-            </motion.div>
+            <Button onClick={() => setOpen(!open)}>About Me</Button>
+            <Button link="/about">CV</Button>
             <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
                 <FaItchIo className="links" onClick={() => window.open("https://nomoon404.itch.io/", "_blank")} />
             </motion.div>

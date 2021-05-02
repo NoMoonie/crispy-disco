@@ -33,15 +33,20 @@ const container = {
     show: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.2,
-            delayChildren: 0.1,
+            staggerChildren: 0.8,
+            delayChildren: 0.5,
         },
     },
 };
 
 const stagerdItems = {
-    hidden: { y: -200 },
-    show: { y: 0 },
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+};
+
+const transitions = {
+    type: "spring",
+    duration: 0.5,
 };
 
 const Intro: FC<Homepage> = ({ open, setOpen }) => {
@@ -49,11 +54,15 @@ const Intro: FC<Homepage> = ({ open, setOpen }) => {
         <Box1>
             <Box1inner>
                 <motion.div variants={container} initial="hidden" animate="show">
-                    <motion.h1 variants={stagerdItems}>Hi,</motion.h1>
-                    <motion.h1 variants={stagerdItems}>
+                    <motion.h1 transition={transitions} variants={stagerdItems}>
+                        Hi,
+                    </motion.h1>
+                    <motion.h1 transition={transitions} variants={stagerdItems}>
                         I´m <span>Emil</span>,
                     </motion.h1>
-                    <motion.h1 variants={stagerdItems}>web developer.</motion.h1>
+                    <motion.h1 transition={transitions} variants={stagerdItems}>
+                        web developer.
+                    </motion.h1>
                     <p>Back end Debeloper / Front end Developer / React / Electronjs / Wordpress </p>
                 </motion.div>
             </Box1inner>

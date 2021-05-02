@@ -1,7 +1,9 @@
+import { Pagetransiton, transition } from "components/Pageroutes";
+import { motion } from "framer-motion";
 import { useEffect } from "react";
 import styled from "styled-components";
 
-const ProjektsStyle = styled.div`
+const ProjektsStyle = styled(motion.div)`
     color: ${(props) => props.theme.main.textColor};
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
@@ -23,7 +25,7 @@ const Projekts = () => {
         window.scrollTo(0, 0);
     }, []);
     return (
-        <ProjektsStyle>
+        <ProjektsStyle variants={Pagetransiton} initial="init" animate="show" exit="hidden" transition={transition}>
             <Box1>
                 <h1>
                     Projekts <br /> Comming soon!

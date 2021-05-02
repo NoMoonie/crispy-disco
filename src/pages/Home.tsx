@@ -3,8 +3,10 @@ import { ReactComponent as Logo } from "img/logo.svg";
 import { useState } from "react";
 import Intro from "components/pagesComponets/homepage/Intro";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
+import { Pagetransiton, transition } from "components/Pageroutes";
 
-const HomeStyle = styled.div`
+const HomeStyle = styled(motion.div)`
     color: ${(props) => props.theme.main.textColor};
     background-position: center;
     display: grid;
@@ -35,7 +37,7 @@ const Home = () => {
         window.scrollTo(0, 0);
     }, []);
     return (
-        <HomeStyle>
+        <HomeStyle variants={Pagetransiton} initial="init" animate="show" exit="hidden" transition={transition}>
             <Intro open={open} setOpen={setOpen} />
             <Box2>
                 <Logo />

@@ -9,7 +9,7 @@ interface Buttoninterface {
     fontSize?: string;
 }
 
-const LinkStyle = styled.div<{ fontSize?: string }>`
+const LinkStyle = styled(motion.div)<{ fontSize?: string }>`
     .link-page {
         user-select: none;
         font-size: ${(props) => (props.fontSize ? props.fontSize : "1.5rem")};
@@ -29,19 +29,19 @@ const LinkStyle = styled.div<{ fontSize?: string }>`
 
 const Button: FC<Buttoninterface> = ({ children, onClick, link, fontSize }) => {
     return (
-        <motion.div whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.9 }}>
+        <>
             {link ? (
-                <LinkStyle fontSize={fontSize}>
+                <LinkStyle whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.9 }} fontSize={fontSize}>
                     <Link className="link-page" to={link}>
                         {children}
                     </Link>
                 </LinkStyle>
             ) : (
-                <LinkStyle fontSize={fontSize} onClick={onClick}>
+                <LinkStyle whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.9 }} fontSize={fontSize} onClick={onClick}>
                     <div className="link-page"> {children}</div>
                 </LinkStyle>
             )}
-        </motion.div>
+        </>
     );
 };
 

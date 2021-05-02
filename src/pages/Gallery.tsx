@@ -1,7 +1,9 @@
+import { Pagetransiton, transition } from "components/Pageroutes";
+import { motion } from "framer-motion";
 import { useEffect } from "react";
 import styled from "styled-components";
 
-const GalleryStyle = styled.div`
+const GalleryStyle = styled(motion.div)`
     color: ${(props) => props.theme.main.textColor};
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -31,7 +33,7 @@ const Gallery = () => {
         window.scrollTo(0, 0);
     }, []);
     return (
-        <GalleryStyle>
+        <GalleryStyle variants={Pagetransiton} initial="init" animate="show" exit="hidden" transition={transition}>
             <Wrapper></Wrapper>
             <Wrapper className="card-tall card-wide"></Wrapper>
             <Wrapper></Wrapper>

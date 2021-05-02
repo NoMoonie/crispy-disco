@@ -32,7 +32,6 @@ const Details: FC<Detailsinterface> = ({ professtion, location, email, number, l
                 <Loading />
             ) : (
                 <>
-                    <h1>Details</h1>
                     <p>
                         <MdWork /> {professtion}
                     </p>

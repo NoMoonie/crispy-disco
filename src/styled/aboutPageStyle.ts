@@ -1,22 +1,4 @@
-import styled, { keyframes } from "styled-components";
-
-const left = keyframes`
-    from{
-        transform: translateX(-200%);
-    }
-`;
-
-const top = keyframes`
-    from{
-        transform: translateY(-100%);
-    }
-`;
-
-const bottom = keyframes`
-    from{
-        transform: translateY(100%);
-    }
-`;
+import styled from "styled-components";
 
 export const ProfilePic = styled.div`
     border-top-left-radius: 10px;
@@ -24,10 +6,11 @@ export const ProfilePic = styled.div`
     position: relative;
     width: 100%;
     height: 20%;
+    border-bottom: ${(props) => props.theme.main.border};
     svg {
-        position: absolute;
-        top: 20px;
-        height: 200px;
+        width: 100%;
+        height: 90%;
+        transform: scale(0.8);
     }
     .name {
         position: absolute;
@@ -37,33 +20,31 @@ export const ProfilePic = styled.div`
 `;
 
 export const Box1 = styled.div`
+    background-color: ${(porps) => porps.theme.main.bg};
+
+    /* border: 1px solid ${(props) => props.theme.main.scAccent}; */
     border-radius: 10px;
-    grid-row: 1/3;
-    margin-left: 10em;
+    grid-row: 1/5;
+
     section {
-        border-top: ${(props) => props.theme.main.border};
         padding: 1em;
         display: grid;
         gap: 1em;
     }
-    animation: ${left} 900ms forwards;
 `;
 
 export const Box2 = styled.div<{ top?: boolean }>`
+    background-color: ${(porps) => porps.theme.main.bg};
+    /* border: 1px solid ${(props) => props.theme.main.scAccent}; */
     border-radius: 10px;
-    grid-column: 2/4;
-    margin-right: 10em;
+    grid-row: 3/5;
+    padding: 1em;
     svg {
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
     }
+    overflow: auto;
     h1 {
-        display: flex;
-        padding: 0.5em;
-        p {
-            padding-left: 1em;
-            margin-top: 0.3em;
-        }
+        color: ${(props) => props.theme.main.scbg};
     }
-    animation: ${(props) => (props.top ? top : bottom)} 900ms ease;
 `;

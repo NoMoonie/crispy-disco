@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -21,7 +22,7 @@ const NavitemStyle = styled.li`
         height: ${(props) => props.theme.navbar.navitem.buttonSize};
         background-color: ${(props) => props.theme.navbar.bg};
         border: ${(props) => props.theme.navbar.border};
-        border-radius: 25%;
+        border-radius: 10px;
         padding: 5px;
         margin: 2px;
         display: flex;
@@ -35,16 +36,18 @@ const NavitemStyle = styled.li`
     }
 `;
 
-const Navitem: FC<NavitemInterface> = ({ link, ...props }) => {
+const Navitem: FC<NavitemInterface> = ({ link, icon, children }) => {
     const [open, setopen] = useState(false);
     return (
-        <NavitemStyle>
-            {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
-            <Link to={link} className="icon-button" onClick={() => setopen(!open)}>
-                {props.icon}
-            </Link>
-            {open && props.children}
-        </NavitemStyle>
+        <motion.div whileHover={{ y: 10 }} whileTap={{ scale: 0.9 }}>
+            <NavitemStyle>
+                {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
+                <Link to={link} className="icon-button" onClick={() => setopen(!open)}>
+                    {icon}
+                </Link>
+                {open && children}
+            </NavitemStyle>
+        </motion.div>
     );
 };
 

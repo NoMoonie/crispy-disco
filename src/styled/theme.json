@@ -5,14 +5,16 @@
         "scbg": "#fc5185",
         "scAccent": "#96586B",
         "textColor": "#dadce1",
-        "border": "1px solid #fc5185"
+        "border": "1px solid #fc5185",
+        "sc": "#3223",
+        "bodybg": "#110a1a"
     },
     "navbar": {
         "bg": "#121212",
         "bgAccent": "#313131",
         "textColor": "#dadce1",
         "navSize": "60px",
-        "border": "1px solid #fc5185",
+        "border": "1px solid #313131",
         "borderRadius": "8px",
         "speed": "500ms",
         "navitem": {

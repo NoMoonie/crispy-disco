@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 
 const GalleryStyle = styled.div`
@@ -15,7 +16,7 @@ const Wrapper = styled.div`
     background-position: center;
     background-size: 200%;
     background-repeat: no-repeat;
-    background-color: #3223;
+    background-color: ${(props) => props.theme.main.bg};
     border-radius: 10px;
     &.card-tall {
         grid-row: span 2 / auto;
@@ -26,6 +27,9 @@ const Wrapper = styled.div`
 `;
 
 const Gallery = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <GalleryStyle>
             <Wrapper></Wrapper>

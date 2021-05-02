@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 
 const ProjektsStyle = styled.div`
@@ -18,6 +19,9 @@ const Box1 = styled.div`
 `;
 
 const Projekts = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <ProjektsStyle>
             <Box1>

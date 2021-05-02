@@ -8,12 +8,6 @@ interface ListItemInterface {
     enddate: string;
 }
 
-const ListItemStyle = styled.section``;
-
-const Title = styled.h1`
-    font-size: 14pt;
-`;
-
 const ListDate = styled.div`
     display: flex;
     color: ${(props) => props.theme.main.scbg};
@@ -22,26 +16,28 @@ const ListDate = styled.div`
         height: 20px;
     }
     p {
-        margin-left: 1em;
+        margin-left: 0.5em;
     }
 `;
 
-const Parag = styled.p`
-    margin-top: 1em;
+const Section = styled.section`
+    /* border-right: ${(props) => props.theme.main.border};
+    border-bottom: ${(props) => props.theme.main.border}; */
+    border-radius: 10px;
 `;
 
 const WorkItem: FC<ListItemInterface> = ({ title, startdate, enddate, children }) => {
     return (
-        <ListItemStyle>
-            <Title>{title}</Title>
+        <Section>
+            <h2 style={{ fontSize: "13pt" }}>{title}</h2>
             <ListDate>
                 <FaCalendarAlt className="cal" />
                 <p>
                     {startdate} - {enddate}
                 </p>
             </ListDate>
-            <Parag>{children}</Parag>
-        </ListItemStyle>
+            <p style={{ marginTop: "0.1em" }}>{children}</p>
+        </Section>
     );
 };
 

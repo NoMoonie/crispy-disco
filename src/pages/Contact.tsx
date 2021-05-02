@@ -31,9 +31,12 @@ const Contact = () => {
     return (
         <ContactStyle variants={Pagetransiton} initial="init" animate="show" exit="hidden" transition={transition}>
             <Box1>
-                <h1>
-                    Contact <br /> Comming soon!
-                </h1>
+                <div>
+                    <h1>
+                        Contact <br /> Comming soon!
+                    </h1>
+                    <p>In the mean time you can send an email to: emilstrjobb@gmail.com</p>
+                </div>
             </Box1>
         </ContactStyle>
     );

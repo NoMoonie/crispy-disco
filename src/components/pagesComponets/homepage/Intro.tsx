@@ -1,5 +1,5 @@
 import ButtonWrapper from "components/pagesComponets/homepage/ButtonWrapper";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { FC } from "react";
 import styled from "styled-components";
 
@@ -33,8 +33,8 @@ const container = {
     show: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.8,
-            delayChildren: 0.5,
+            staggerChildren: 0.4,
+            delayChildren: 0.2,
         },
     },
 };
@@ -53,18 +53,20 @@ const Intro: FC<Homepage> = ({ open, setOpen }) => {
     return (
         <Box1>
             <Box1inner>
-                <motion.div variants={container} initial="hidden" animate="show">
-                    <motion.h1 transition={transitions} variants={stagerdItems}>
-                        Hi,
-                    </motion.h1>
-                    <motion.h1 transition={transitions} variants={stagerdItems}>
-                        I´m <span>Emil</span>,
-                    </motion.h1>
-                    <motion.h1 transition={transitions} variants={stagerdItems}>
-                        web developer.
-                    </motion.h1>
-                    <p>Back end Debeloper / Front end Developer / React / Electronjs / Wordpress </p>
-                </motion.div>
+                <AnimatePresence>
+                    <motion.div variants={container} initial="hidden" animate="show">
+                        <motion.h1 transition={transitions} variants={stagerdItems}>
+                            Hi,
+                        </motion.h1>
+                        <motion.h1 transition={transitions} variants={stagerdItems}>
+                            I´m <span>Emil</span>,
+                        </motion.h1>
+                        <motion.h1 transition={transitions} variants={stagerdItems}>
+                            web developer.
+                        </motion.h1>
+                        <p>Back end Debeloper / Front end Developer / React / Electronjs / Wordpress </p>
+                    </motion.div>
+                </AnimatePresence>
             </Box1inner>
             <ButtonWrapper open={open} setOpen={setOpen} />
         </Box1>

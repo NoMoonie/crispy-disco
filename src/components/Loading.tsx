@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import styled from "styled-components";
 
 const LoadingStyle = styled.div`
@@ -48,23 +48,25 @@ const loadingCircleTransition = {
 const Loading = () => {
     return (
         <LoadingStyle>
-            <motion.div variants={varientWrapper} initial="start" animate="end" className="motions-div">
-                <motion.span
-                    variants={varientCircle}
-                    transition={loadingCircleTransition}
-                    className="motions-span"
-                ></motion.span>
-                <motion.span
-                    variants={varientCircle}
-                    transition={loadingCircleTransition}
-                    className="motions-span"
-                ></motion.span>
-                <motion.span
-                    variants={varientCircle}
-                    transition={loadingCircleTransition}
-                    className="motions-span"
-                ></motion.span>
-            </motion.div>
+            <AnimatePresence>
+                <motion.div variants={varientWrapper} initial="start" animate="end" className="motions-div">
+                    <motion.span
+                        variants={varientCircle}
+                        transition={loadingCircleTransition}
+                        className="motions-span"
+                    ></motion.span>
+                    <motion.span
+                        variants={varientCircle}
+                        transition={loadingCircleTransition}
+                        className="motions-span"
+                    ></motion.span>
+                    <motion.span
+                        variants={varientCircle}
+                        transition={loadingCircleTransition}
+                        className="motions-span"
+                    ></motion.span>
+                </motion.div>
+            </AnimatePresence>
         </LoadingStyle>
     );
 };

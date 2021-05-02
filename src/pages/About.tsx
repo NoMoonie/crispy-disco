@@ -89,7 +89,7 @@ const Home = () => {
                 <Skills />
             </Box1>
             <P>
-                <h1>Who am i?!</h1>
+                <h1>About Me!</h1>
                 <p>Yes! whom am i. I'm a 22 year old guy from sweden i'm kind and creative.</p>
                 <p>
                     Things i'm most passionate about is web develepment In terms of the work. Love to code it's fun to

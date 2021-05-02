@@ -27,8 +27,8 @@ const Wrapper = styled.section`
 const ButtonWrapper: FC<Wrapperinterface> = ({ open, setOpen }) => {
     return (
         <Wrapper>
-            <Button onClick={() => setOpen(!open)}>About Me</Button>
-            <Button link="/about">CV</Button>
+            <Button link="/about">About</Button>
+            <Button link="/contact">Contact</Button>
             <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
                 <FaItchIo className="links" onClick={() => window.open("https://nomoon404.itch.io/", "_blank")} />
             </motion.div>

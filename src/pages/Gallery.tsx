@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     background-position: center;
     background-size: 200%;
     background-repeat: no-repeat;
-    background-color: #3223;
+    background-color: ${(props) => props.theme.main.bg};
     border-radius: 10px;
     &.card-tall {
         grid-row: span 2 / auto;

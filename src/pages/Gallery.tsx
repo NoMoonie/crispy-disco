@@ -8,7 +8,7 @@ const GalleryStyle = styled(motion.div)`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-auto-rows: 240px;
-    gap: 1em;
+    gap: 0.5em;
     padding: 1em;
     padding-top: 4em;
     min-height: 100vh;

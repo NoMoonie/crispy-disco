@@ -1,6 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "styled/globalStyle";
-import Theme from "styled/theme.json";
+import Theme from "styled/theme/theme.json";
 import { FaHome, FaEnvelope, FaImage, FaUser, FaCode } from "react-icons/fa";
 import Navbar from "components/Navbar/Navbar";
 import Navitem from "components/Navbar/Navitem";

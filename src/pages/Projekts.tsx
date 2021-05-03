@@ -1,23 +1,20 @@
 import { Pagetransiton, transition } from "components/Pageroutes";
-import { motion } from "framer-motion";
-import { useEffect } from "react";
+import ProjektItem from "components/pagesComponets/Page/ProjektItem";
+import { AnimateSharedLayout, motion } from "framer-motion";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 const ProjektsStyle = styled(motion.div)`
     color: ${(props) => props.theme.main.textColor};
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: 1fr 5fr 1fr;
-    height: 100vh;
-`;
-
-const Box1 = styled.div`
-    grid-column: 2/2;
-    grid-row: 2/2;
-    background-color: ${(props) => props.theme.main.bg};
-    display: grid;
-    place-items: center;
-    text-align: center;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 0.5em;
+    min-height: 100vh;
+    margin-top: 4em;
+    margin-bottom: 1em;
+    margin-left: 10em;
+    margin-right: 10em;
 `;
 
 const Projekts = () => {
@@ -26,11 +23,15 @@ const Projekts = () => {
     }, []);
     return (
         <ProjektsStyle variants={Pagetransiton} initial="init" animate="show" exit="hidden" transition={transition}>
-            <Box1>
-                <h1>
-                    Projekts <br /> Comming soon!
-                </h1>
-            </Box1>
+            <AnimateSharedLayout>
+                <ProjektItem></ProjektItem>
+                <ProjektItem></ProjektItem>
+                <ProjektItem></ProjektItem>
+                <ProjektItem></ProjektItem>
+                <ProjektItem></ProjektItem>
+                <ProjektItem></ProjektItem>
+                <ProjektItem></ProjektItem>
+            </AnimateSharedLayout>
         </ProjektsStyle>
     );
 };

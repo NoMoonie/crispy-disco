@@ -30,5 +30,12 @@
         "hover": "#FF92B3",
         "speed": "250ms",
         "border": "1px solid #fc5185"
+    },
+    "card": {
+        "bg": "#121212",
+        "bgAccent": "#4E4E4E",
+        "scbg": "#fc5185",
+        "textColor": "#dadce1",
+        "padding": "2em"
     }
 }

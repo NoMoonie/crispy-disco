@@ -10,22 +10,26 @@ interface contentprop {
 
 const SubTitle = styled(motion.span)`
     color: ${(props) => props.theme.card.bgAccent};
+    z-index: 1;
 `;
 
 const Title = styled(motion.h3)`
     color: ${(props) => props.theme.card.scbg};
+    z-index: 1;
 `;
+
+const Wrapper = styled(motion.section)``;
 
 const Header: FC<contentprop> = ({ title, subtitle, selected }) => {
     return (
-        <motion.section
+        <Wrapper
             animate={{
                 visibility: selected ? "hidden" : "visible",
             }}
         >
             <SubTitle> {subtitle} </SubTitle>
             <Title> {title} </Title>
-        </motion.section>
+        </Wrapper>
     );
 };
 

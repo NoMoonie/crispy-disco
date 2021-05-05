@@ -1,7 +1,8 @@
-import { motion } from "framer-motion";
-import { FC } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { AnimFix } from "styled/globalStyle";
 
 interface Buttoninterface {
     onClick?: any;
@@ -22,26 +23,33 @@ const LinkStyle = styled(motion.div)<{ fontSize?: string }>`
         display: inline-block;
         color: ${(props) => props.theme.main.scbg};
         &:hover {
-            background-color: ${(props) => props.theme.main.scAccent};
+            color: ${(props) => props.theme.main.scAccent};
         }
     }
 `;
 
 const Button: FC<Buttoninterface> = ({ children, onClick, link, fontSize }) => {
     return (
-        <>
-            {link ? (
-                <LinkStyle whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.9 }} fontSize={fontSize}>
-                    <Link className="link-page" to={link}>
-                        {children}
-                    </Link>
-                </LinkStyle>
-            ) : (
-                <LinkStyle whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.9 }} fontSize={fontSize} onClick={onClick}>
-                    <div className="link-page"> {children}</div>
-                </LinkStyle>
-            )}
-        </>
+        <AnimFix>
+            <AnimatePresence>
+                {link ? (
+                    <LinkStyle whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} fontSize={fontSize}>
+                        <Link className="link-page" to={link}>
+                            {children}
+                        </Link>
+                    </LinkStyle>
+                ) : (
+                    <LinkStyle
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        fontSize={fontSize}
+                        onClick={onClick}
+                    >
+                        <span className="link-page">{children}</span>
+                    </LinkStyle>
+                )}
+            </AnimatePresence>
+        </AnimFix>
     );
 };
 

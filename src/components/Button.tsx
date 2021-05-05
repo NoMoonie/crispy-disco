@@ -8,38 +8,45 @@ interface Buttoninterface {
     onClick?: any;
     link?: string;
     fontSize?: string;
+    Primary?: boolean;
 }
 
-const LinkStyle = styled(motion.div)<{ fontSize?: string }>`
+const LinkStyle = styled(motion.div)<{ fontSize?: string; Primary?: boolean }>`
     .link-page {
         user-select: none;
         font-size: ${(props) => (props.fontSize ? props.fontSize : "1.5rem")};
         display: inline-block;
         cursor: pointer;
-        color: ${(props) => props.theme.main.scbg};
-        border: currentColor 0.01em solid;
+        color: ${(props) => (props.Primary ? props.theme.main.textColor : props.theme.main.scbg)};
+        border: ${(props) => (props.Primary ? props.theme.main.bgAccent : "currentColor")} 0.01em solid;
         padding: 0.25em 1em;
         border-radius: 0.25em;
         display: inline-block;
-        color: ${(props) => props.theme.main.scbg};
+        background-color: ${(props) => (props.Primary ? props.theme.main.bg : "none")};
         &:hover {
-            color: ${(props) => props.theme.main.scAccent};
+            color: ${(props) => (props.Primary ? props.theme.main.bgAccent : props.theme.main.scAccent)};
         }
     }
 `;
 
-const Button: FC<Buttoninterface> = ({ children, onClick, link, fontSize }) => {
+const Button: FC<Buttoninterface> = ({ children, onClick, link, fontSize, Primary }) => {
     return (
         <AnimFix>
             <AnimatePresence>
                 {link ? (
-                    <LinkStyle whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} fontSize={fontSize}>
+                    <LinkStyle
+                        Primary={Primary}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        fontSize={fontSize}
+                    >
                         <Link className="link-page" to={link}>
                             {children}
                         </Link>
                     </LinkStyle>
                 ) : (
                     <LinkStyle
+                        Primary={Primary}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         fontSize={fontSize}

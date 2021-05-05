@@ -45,13 +45,7 @@ const Button: FC<Buttoninterface> = ({ children, onClick, link, fontSize, Primar
                         </Link>
                     </LinkStyle>
                 ) : (
-                    <LinkStyle
-                        Primary={Primary}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        fontSize={fontSize}
-                        onClick={onClick}
-                    >
+                    <LinkStyle Primary={Primary} fontSize={fontSize} onClick={onClick}>
                         <span className="link-page">{children}</span>
                     </LinkStyle>
                 )}

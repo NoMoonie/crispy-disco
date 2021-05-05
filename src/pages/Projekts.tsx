@@ -17,9 +17,6 @@ const ProjektsStyle = styled(motion.div)`
     margin-bottom: 1em;
     margin-left: 10em;
     margin-right: 10em;
-    &:nth-child(10) {
-        background-color: #fff;
-    }
 `;
 
 const Overlay = styled(motion.div)`

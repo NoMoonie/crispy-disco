@@ -1,5 +1,4 @@
 import { FaItchIo, FaGithub } from "react-icons/fa";
-import { motion } from "framer-motion";
 import styled from "styled-components";
 import { FC } from "react";
 import Button from "components/Button";

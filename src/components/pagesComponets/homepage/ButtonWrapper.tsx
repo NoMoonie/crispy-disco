@@ -1,4 +1,4 @@
-import { FaItchIo, FaGithub } from "react-icons/fa";
+import { FaItchIo, FaGithub, FaUserAlt, FaEnvelope } from "react-icons/fa";
 import styled from "styled-components";
 import { FC } from "react";
 import Button from "components/Button";
@@ -26,10 +26,18 @@ const Wrapper = styled.section`
 const ButtonWrapper: FC<Wrapperinterface> = ({ open, setOpen }) => {
     return (
         <Wrapper>
-            <Button link="/about">About</Button>
-            <Button link="/contact">Contact</Button>
-            <FaItchIo className="links" onClick={() => window.open("https://nomoon404.itch.io/", "_blank")} />
-            <FaGithub className="links" onClick={() => window.open("https://github.com/NoMoonie", "_blank")} />
+            <Button icon={<FaUserAlt />} link="/about">
+                About
+            </Button>
+            <Button icon={<FaEnvelope />} link="/contact">
+                Contact
+            </Button>
+            <Button Primary icon={<FaItchIo />} onClick={() => window.open("https://nomoon404.itch.io/", "_blank")}>
+                Itch
+            </Button>
+            <Button Primary icon={<FaGithub />} onClick={() => window.open("https://github.com/NoMoonie", "_blank")}>
+                Github
+            </Button>
         </Wrapper>
     );
 };

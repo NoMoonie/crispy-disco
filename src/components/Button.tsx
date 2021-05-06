@@ -7,6 +7,7 @@ interface Buttoninterface {
     link?: string;
     fontSize?: string;
     Primary?: boolean;
+    icon?: any;
 }
 
 const LinkStyle = styled.div<{ fontSize?: string; Primary?: boolean }>`
@@ -22,23 +23,31 @@ const LinkStyle = styled.div<{ fontSize?: string; Primary?: boolean }>`
         display: inline-block;
         background-color: ${(props) => (props.Primary ? props.theme.main.bg : "none")};
         &:hover {
-            color: ${(props) => (props.Primary ? props.theme.main.bgAccent : props.theme.main.scAccent)};
+            color: ${(props) => (props.Primary ? props.theme.main.scbg : props.theme.main.scAccent)};
         }
     }
 `;
 
-const Button: FC<Buttoninterface> = ({ children, onClick, link, fontSize, Primary }) => {
+const Icon = styled.span<{ isIcon: any }>`
+    margin-right: ${(props) => (props.isIcon ? "0.5em" : "")};
+`;
+
+const Button: FC<Buttoninterface> = ({ children, onClick, link, fontSize, Primary, icon }) => {
     return (
         <>
             {link ? (
                 <LinkStyle Primary={Primary} fontSize={fontSize}>
                     <Link className="link-page" to={link}>
+                        <Icon isIcon={children}>{icon}</Icon>
                         {children}
                     </Link>
                 </LinkStyle>
             ) : (
                 <LinkStyle Primary={Primary} fontSize={fontSize} onClick={onClick}>
-                    <span className="link-page">{children}</span>
+                    <span className="link-page">
+                        <Icon isIcon={children}>{icon}</Icon>
+                        {children}
+                    </span>
                 </LinkStyle>
             )}
         </>

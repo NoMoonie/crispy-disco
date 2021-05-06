@@ -29,12 +29,8 @@ const ButtonWrapper: FC<Wrapperinterface> = ({ open, setOpen }) => {
         <Wrapper>
             <Button link="/about">About</Button>
             <Button link="/contact">Contact</Button>
-            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
-                <FaItchIo className="links" onClick={() => window.open("https://nomoon404.itch.io/", "_blank")} />
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
-                <FaGithub className="links" onClick={() => window.open("https://github.com/NoMoonie", "_blank")} />
-            </motion.div>
+            <FaItchIo className="links" onClick={() => window.open("https://nomoon404.itch.io/", "_blank")} />
+            <FaGithub className="links" onClick={() => window.open("https://github.com/NoMoonie", "_blank")} />
         </Wrapper>
     );
 };

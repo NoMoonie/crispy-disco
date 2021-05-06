@@ -1,8 +1,6 @@
-import { AnimatePresence, motion } from "framer-motion";
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { AnimFix } from "styled/globalStyle";
 
 interface Buttoninterface {
     onClick?: any;
@@ -11,7 +9,7 @@ interface Buttoninterface {
     Primary?: boolean;
 }
 
-const LinkStyle = styled(motion.div)<{ fontSize?: string; Primary?: boolean }>`
+const LinkStyle = styled.div<{ fontSize?: string; Primary?: boolean }>`
     .link-page {
         user-select: none;
         font-size: ${(props) => (props.fontSize ? props.fontSize : "1.5rem")};
@@ -31,26 +29,19 @@ const LinkStyle = styled(motion.div)<{ fontSize?: string; Primary?: boolean }>`
 
 const Button: FC<Buttoninterface> = ({ children, onClick, link, fontSize, Primary }) => {
     return (
-        <AnimFix>
-            <AnimatePresence>
-                {link ? (
-                    <LinkStyle
-                        Primary={Primary}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        fontSize={fontSize}
-                    >
-                        <Link className="link-page" to={link}>
-                            {children}
-                        </Link>
-                    </LinkStyle>
-                ) : (
-                    <LinkStyle Primary={Primary} fontSize={fontSize} onClick={onClick}>
-                        <span className="link-page">{children}</span>
-                    </LinkStyle>
-                )}
-            </AnimatePresence>
-        </AnimFix>
+        <>
+            {link ? (
+                <LinkStyle Primary={Primary} fontSize={fontSize}>
+                    <Link className="link-page" to={link}>
+                        {children}
+                    </Link>
+                </LinkStyle>
+            ) : (
+                <LinkStyle Primary={Primary} fontSize={fontSize} onClick={onClick}>
+                    <span className="link-page">{children}</span>
+                </LinkStyle>
+            )}
+        </>
     );
 };
 

@@ -31,6 +31,7 @@ export const Box1 = styled.div`
         display: grid;
         gap: 1em;
     }
+    overscroll-behavior: contain;
 `;
 
 export const Box2 = styled.div<{ top?: boolean }>`
@@ -47,4 +48,5 @@ export const Box2 = styled.div<{ top?: boolean }>`
     h1 {
         color: ${(props) => props.theme.main.scbg};
     }
+    overscroll-behavior: contain;
 `;

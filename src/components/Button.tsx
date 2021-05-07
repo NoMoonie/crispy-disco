@@ -17,13 +17,15 @@ const LinkStyle = styled.div<{ fontSize?: string; Primary?: boolean }>`
         display: inline-block;
         cursor: pointer;
         color: ${(props) => (props.Primary ? props.theme.main.textColor : props.theme.main.scbg)};
-        border: ${(props) => (props.Primary ? props.theme.main.bgAccent : "currentColor")} 0.01em solid;
+        border: ${(props) => (props.Primary ? props.theme.main.bgAccent : props.theme.main.scbg)} 0.01em solid;
         padding: 0.25em 1em;
         border-radius: 0.25em;
         display: inline-block;
         background-color: ${(props) => (props.Primary ? props.theme.main.bg : "none")};
         &:hover {
-            color: ${(props) => (props.Primary ? props.theme.main.scbg : props.theme.main.scAccent)};
+            color: ${(props) => (props.Primary ? props.theme.main.scbg : props.theme.main.scbg)};
+            border-color: ${(props) => (props.Primary ? props.theme.main.scbg : props.theme.main.scbg)};
+            filter: brightness(50%);
         }
     }
 `;

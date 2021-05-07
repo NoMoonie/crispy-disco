@@ -21,7 +21,6 @@ const LinkStyle = styled.div<{ Primary?: boolean; isIcon?: boolean; isContent: a
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     .link {
         color: ${(props) => (props.Primary ? props.theme.main.textColor : props.theme.main.scbg)};
         border: ${(props) => (props.Primary ? props.theme.main.bgAccent : props.theme.main.scbg)} 0.01em solid;
@@ -32,6 +31,7 @@ const LinkStyle = styled.div<{ Primary?: boolean; isIcon?: boolean; isContent: a
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
         svg {
             width: ${(props) => (props.isContent ? "25px" : "31px")};
             height: ${(props) => (props.isContent ? "25px" : "31px")};
@@ -50,10 +50,10 @@ const LinkStyle = styled.div<{ Primary?: boolean; isIcon?: boolean; isContent: a
 const Button: FC<Buttoninterface> = ({ children, onClick, Primary, icon, fontSize }) => {
     return (
         <LinkStyle Primary={Primary} onClick={onClick} isIcon={icon} isContent={children} fontSize={fontSize}>
-            <div className="link">
+            <button className="link">
                 {icon}
                 {children && <span>{children}</span>}
-            </div>
+            </button>
         </LinkStyle>
     );
 };

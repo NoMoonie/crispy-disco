@@ -24,7 +24,7 @@ const LinkStyle = styled.div<{ Primary?: boolean; isIcon?: boolean; isContent: a
     .link {
         color: ${(props) => (props.Primary ? props.theme.main.textColor : props.theme.main.scbg)};
         border: ${(props) => (props.Primary ? props.theme.main.bgAccent : props.theme.main.scbg)} 0.01em solid;
-        background-color: ${(props) => (props.Primary ? props.theme.main.bg : "none")};
+        background-color: ${(props) => (props.Primary ? props.theme.main.bg : "transparent")};
         font-size: ${(props) => (props.fontSize ? props.fontSize : "1.5em")};
         padding: ${(props) => (props.isContent ? "0.25em 1em" : "0.25em")};
         border-radius: 0.25em;

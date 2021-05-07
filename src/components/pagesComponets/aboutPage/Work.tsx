@@ -1,4 +1,4 @@
-import Loading from "components/Loading";
+import Loading from "components/util/Loading";
 import { FC } from "react";
 import { Box2 } from "styled/aboutPageStyle";
 import { dbinterface } from "./Education";

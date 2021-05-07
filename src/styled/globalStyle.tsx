@@ -1,15 +1,19 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     *{
         margin: 0;
         padding: 0;
         font-family: 'DM Mono', sans-serif;
+        ::selection{
+            color: #fff; 
+            background-color:#fc5185;
+        }
     }
     body{
         height: 100%;
         background-color: #110a1a;
-        overflow-x: hidden; 
+        overflow-x: hidden;
     }
     ul{
         list-style: none;
@@ -59,7 +63,13 @@ const GlobalStyle = createGlobalStyle`
         backface-visibility: hidden;
         border-radius: 10px; 
     }
-
-   
 `;
+
+export const AnimFix = styled.div`
+    -webkit-perspective: 1000;
+    perspective: 1000;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+`;
+
 export default GlobalStyle;

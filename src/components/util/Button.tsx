@@ -14,7 +14,7 @@ interface LinkButtoninterface {
     icon?: any;
 }
 
-const LinkStyle = styled.div<{ Primary?: boolean }>`
+const LinkStyle = styled.div<{ Primary?: boolean; isIcon?: boolean }>`
     user-select: none;
     display: flex;
     justify-content: center;
@@ -31,8 +31,8 @@ const LinkStyle = styled.div<{ Primary?: boolean }>`
         justify-content: center;
         align-items: center;
         svg {
-            width: ${(props) => (props.children ? "25px" : "100px")};
-            height: ${(props) => (props.children ? "25px" : "100px")};
+            width: ${(props) => (props.isIcon ? "25px" : "100px")};
+            height: ${(props) => (props.isIcon ? "25px" : "100px")};
         }
         :hover {
             border-color: ${(props) => (props.Primary ? props.theme.main.scbg : props.theme.main.scbg)};
@@ -40,14 +40,14 @@ const LinkStyle = styled.div<{ Primary?: boolean }>`
             filter: brightness(50%);
         }
         span {
-            margin-left: 0.25em;
+            margin-left: ${(props) => (props.isIcon ? "0.25em" : "")};
         }
     }
 `;
 
 const Button: FC<Buttoninterface> = ({ children, onClick, Primary, icon }) => {
     return (
-        <LinkStyle Primary={Primary} onClick={onClick}>
+        <LinkStyle Primary={Primary} onClick={onClick} isIcon={icon}>
             <div className="link">
                 {icon}
                 {children && <span>{children}</span>}
@@ -58,7 +58,7 @@ const Button: FC<Buttoninterface> = ({ children, onClick, Primary, icon }) => {
 
 export const LinkButton: FC<LinkButtoninterface> = ({ children, link, Primary, icon }) => {
     return (
-        <LinkStyle Primary={Primary}>
+        <LinkStyle Primary={Primary} isIcon={icon}>
             <Link className="link" to={link}>
                 {icon}
                 {children && <span>{children}</span>}

@@ -1,4 +1,4 @@
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import GlobalStyle from "styled/globalStyle";
 import Theme from "styled/theme/theme.json";
 import { FaHome, FaEnvelope, FaImage, FaUser, FaCode } from "react-icons/fa";
@@ -21,19 +21,25 @@ if (!firebase.apps.length) {
     });
 }
 
+const Main = styled.div`
+    display: grid;
+`;
+
 const App = () => {
     return (
         <ThemeProvider theme={Theme}>
             <GlobalStyle />
-            <Navbar>
-                <Navitem link="/contact" icon={<FaEnvelope />} />
-                <Navitem link="/gallery" icon={<FaImage />} />
-                <Navitem link="/" icon={<FaHome />} />
-                <Navitem link="/about" icon={<FaUser />} />
-                <Navitem link="/projekts" icon={<FaCode />} />
-            </Navbar>
-            <Pageroutes />
-            <Footer />
+            <Main>
+                <Navbar>
+                    <Navitem link="/contact" icon={<FaEnvelope />} />
+                    <Navitem link="/gallery" icon={<FaImage />} />
+                    <Navitem link="/" icon={<FaHome />} />
+                    <Navitem link="/about" icon={<FaUser />} />
+                    <Navitem link="/projekts" icon={<FaCode />} />
+                </Navbar>
+                <Pageroutes />
+                <Footer />
+            </Main>
         </ThemeProvider>
     );
 };

@@ -6,15 +6,17 @@ interface Buttoninterface {
     onClick?: any;
     Primary?: boolean;
     icon?: any;
+    fontSize?: string;
 }
 
 interface LinkButtoninterface {
     link: string;
     Primary?: boolean;
     icon?: any;
+    fontSize?: string;
 }
 
-const LinkStyle = styled.div<{ Primary?: boolean; isIcon?: boolean }>`
+const LinkStyle = styled.div<{ Primary?: boolean; isIcon?: boolean; isContent: any; fontSize?: string }>`
     user-select: none;
     display: flex;
     justify-content: center;
@@ -24,15 +26,15 @@ const LinkStyle = styled.div<{ Primary?: boolean; isIcon?: boolean }>`
         color: ${(props) => (props.Primary ? props.theme.main.textColor : props.theme.main.scbg)};
         border: ${(props) => (props.Primary ? props.theme.main.bgAccent : props.theme.main.scbg)} 0.01em solid;
         background-color: ${(props) => (props.Primary ? props.theme.main.bg : "none")};
-        font-size: 1.5rem;
-        padding: 0.25em;
+        font-size: ${(props) => (props.fontSize ? props.fontSize : "1.5em")};
+        padding: ${(props) => (props.isContent ? "0.25em 1em" : "0.25em")};
         border-radius: 0.25em;
         display: flex;
         justify-content: center;
         align-items: center;
         svg {
-            width: ${(props) => (props.isIcon ? "25px" : "100px")};
-            height: ${(props) => (props.isIcon ? "25px" : "100px")};
+            width: ${(props) => (props.isContent ? "25px" : "31px")};
+            height: ${(props) => (props.isContent ? "25px" : "31px")};
         }
         :hover {
             border-color: ${(props) => (props.Primary ? props.theme.main.scbg : props.theme.main.scbg)};
@@ -45,9 +47,9 @@ const LinkStyle = styled.div<{ Primary?: boolean; isIcon?: boolean }>`
     }
 `;
 
-const Button: FC<Buttoninterface> = ({ children, onClick, Primary, icon }) => {
+const Button: FC<Buttoninterface> = ({ children, onClick, Primary, icon, fontSize }) => {
     return (
-        <LinkStyle Primary={Primary} onClick={onClick} isIcon={icon}>
+        <LinkStyle Primary={Primary} onClick={onClick} isIcon={icon} isContent={children} fontSize={fontSize}>
             <div className="link">
                 {icon}
                 {children && <span>{children}</span>}
@@ -56,9 +58,9 @@ const Button: FC<Buttoninterface> = ({ children, onClick, Primary, icon }) => {
     );
 };
 
-export const LinkButton: FC<LinkButtoninterface> = ({ children, link, Primary, icon }) => {
+export const LinkButton: FC<LinkButtoninterface> = ({ children, link, Primary, icon, fontSize }) => {
     return (
-        <LinkStyle Primary={Primary} isIcon={icon}>
+        <LinkStyle Primary={Primary} isIcon={icon} isContent={children} fontSize={fontSize}>
             <Link className="link" to={link}>
                 {icon}
                 {children && <span>{children}</span>}

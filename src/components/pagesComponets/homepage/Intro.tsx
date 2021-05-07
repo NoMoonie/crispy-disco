@@ -2,6 +2,7 @@ import ButtonWrapper from "components/util/ButtonWrapper";
 import { AnimatePresence, motion } from "framer-motion";
 import { FC } from "react";
 import styled from "styled-components";
+import { container, stagerdItems, transitions } from "styled/anim";
 
 interface Homepage {
     open: boolean;
@@ -27,27 +28,6 @@ const Box1inner = styled(motion.span)`
         color: ${(props) => props.theme.main.scbg};
     }
 `;
-
-const container = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.4,
-            delayChildren: 0.2,
-        },
-    },
-};
-
-const stagerdItems = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1 },
-};
-
-const transitions = {
-    type: "spring",
-    duration: 0.5,
-};
 
 const Intro: FC<Homepage> = ({ open, setOpen }) => {
     return (

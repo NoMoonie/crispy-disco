@@ -1,7 +1,7 @@
 import { FaItchIo, FaGithub, FaUserAlt, FaEnvelope } from "react-icons/fa";
 import styled from "styled-components";
 import { FC } from "react";
-import Button from "components/util/Button";
+import Button, { LinkButton } from "components/util/Button";
 
 interface Wrapperinterface {
     open: boolean;
@@ -17,12 +17,12 @@ const Wrapper = styled.section`
 const ButtonWrapper: FC<Wrapperinterface> = ({ open, setOpen }) => {
     return (
         <Wrapper>
-            <Button Primary icon={<FaUserAlt />} link="/about">
+            <LinkButton Primary icon={<FaUserAlt />} link="/about">
                 About
-            </Button>
-            <Button Primary icon={<FaEnvelope />} link="/contact">
+            </LinkButton>
+            <LinkButton Primary icon={<FaEnvelope />} link="/contact">
                 Contact
-            </Button>
+            </LinkButton>
             <Button Primary icon={<FaItchIo />} onClick={() => window.open("https://nomoon404.itch.io/", "_blank")}>
                 Itch
             </Button>

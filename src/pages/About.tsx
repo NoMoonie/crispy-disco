@@ -19,7 +19,7 @@ const AboutStyle = styled(motion.div)`
     color: ${(props) => props.theme.main.textColor};
     display: grid;
     grid-template-columns: 0.7fr 1fr 1fr;
-    grid-template-rows: 0.5fr 0.5fr 1fr;
+    grid-template-rows: 0.5fr 0.2fr 1fr;
     height: 130vh;
     gap: 0.5em;
     margin-top: 4em;
@@ -29,7 +29,7 @@ const AboutStyle = styled(motion.div)`
     margin-right: 10em;
 `;
 
-const P = styled.div`
+const Main = styled.div`
     background-color: ${(porps) => porps.theme.main.bg};
     /*  border: 1px solid ${(porps) => porps.theme.main.scAccent}; */
     border-radius: 10px;
@@ -41,6 +41,9 @@ const P = styled.div`
         line-height: 1.5em;
         margin-top: 1em;
     }
+    &.int {
+        grid-column: 2/4;
+    }
 `;
 
 const Intresst = styled.div`
@@ -48,23 +51,21 @@ const Intresst = styled.div`
     /* border: 1px solid ${(porps) => porps.theme.main.scAccent}; */
     border-radius: 10px;
     padding: 1em;
-    grid-column: 2/4;
     display: grid;
     grid-template-columns: repeat(4, 0.5fr);
-    grid-template-rows: repeat(2, 0.5fr);
     gap: 1em;
 `;
 
 const Div = styled.div`
-    border: 0.125em solid ${(porps) => porps.theme.main.bgAccent};
+    border: 1px solid ${(porps) => porps.theme.main.bgAccent};
     color: ${(porps) => porps.theme.main.scbg};
     border-radius: 10px;
     padding: 1em;
     display: grid;
     place-items: center;
     svg {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
     }
 `;
 
@@ -90,7 +91,7 @@ const Home = () => {
                 />
                 <Skills />
             </Box1>
-            <P>
+            <Main>
                 <h1>About Me!</h1>
                 <p>Yes! whom am i. I'm a 22 year old guy from sweden i'm kind and creative.</p>
                 <p>
@@ -101,25 +102,28 @@ const Home = () => {
                     I'm currently looking for work/intership as a junior web developer to get myself more professional
                     experience.
                 </p>
-            </P>
-            <P>
+            </Main>
+            <Main>
                 <h1>Hobbies!</h1>
                 <p>Programming, playing games and making games, cooking food and drawing.</p>
-            </P>
-            <Intresst>
-                <Div>
-                    <FaGamepad /> <h1>Games</h1>
-                </Div>
-                <Div>
-                    <FaCode /> <h1>Coding</h1>
-                </Div>
-                <Div>
-                    <GiCookingPot /> <h1>Cooking</h1>
-                </Div>
-                <Div>
-                    <FaPencilAlt /> <h1>Drawing</h1>
-                </Div>
-            </Intresst>
+            </Main>
+            <Main className="int">
+                <h1>Intresst</h1>
+                <Intresst>
+                    <Div>
+                        <FaGamepad /> <h2>Games</h2>
+                    </Div>
+                    <Div>
+                        <FaCode /> <h2>Coding</h2>
+                    </Div>
+                    <Div>
+                        <GiCookingPot /> <h2>Cooking</h2>
+                    </Div>
+                    <Div>
+                        <FaPencilAlt /> <h2>Drawing</h2>
+                    </Div>
+                </Intresst>
+            </Main>
             <Education error={error} loading={loading} snapshot={snapshot} />
             <Work error={error} loading={loading} snapshot={snapshot} />
         </AboutStyle>

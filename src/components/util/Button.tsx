@@ -37,9 +37,9 @@ const LinkStyle = styled.div<{ Primary?: boolean; isIcon?: boolean; isContent: a
             height: ${(props) => (props.isContent ? "25px" : "31px")};
         }
         :hover {
-            border-color: ${(props) => (props.Primary ? props.theme.main.scbg : props.theme.main.scbg)};
-            color: ${(props) => (props.Primary ? props.theme.main.scbg : props.theme.main.scbg)};
-            filter: brightness(50%);
+            border-color: ${(props) => (props.Primary ? props.theme.main.scbg : props.theme.button.hover)};
+            color: ${(props) => (props.Primary ? props.theme.main.scbg : props.theme.button.hover)};
+            filter: ${(props) => (props.Primary ? "brightness(50%)" : "")};
         }
         span {
             margin-left: ${(props) => (props.isIcon ? "0.25em" : "")};

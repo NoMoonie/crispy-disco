@@ -26,10 +26,10 @@ const Wrapper = styled.section`
 const ButtonWrapper: FC<Wrapperinterface> = ({ open, setOpen }) => {
     return (
         <Wrapper>
-            <Button icon={<FaUserAlt />} link="/about">
+            <Button Primary icon={<FaUserAlt />} link="/about">
                 About
             </Button>
-            <Button icon={<FaEnvelope />} link="/contact">
+            <Button Primary icon={<FaEnvelope />} link="/contact">
                 Contact
             </Button>
             <Button Primary icon={<FaItchIo />} onClick={() => window.open("https://nomoon404.itch.io/", "_blank")}>

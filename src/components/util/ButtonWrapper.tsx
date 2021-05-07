@@ -1,7 +1,7 @@
 import { FaItchIo, FaGithub, FaUserAlt, FaEnvelope } from "react-icons/fa";
 import styled from "styled-components";
 import { FC } from "react";
-import Button from "components/Button";
+import Button from "components/util/Button";
 
 interface Wrapperinterface {
     open: boolean;

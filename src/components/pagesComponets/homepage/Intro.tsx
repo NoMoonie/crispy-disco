@@ -1,4 +1,4 @@
-import ButtonWrapper from "components/pagesComponets/homepage/ButtonWrapper";
+import ButtonWrapper from "components/util/ButtonWrapper";
 import { AnimatePresence, motion } from "framer-motion";
 import { FC } from "react";
 import styled from "styled-components";

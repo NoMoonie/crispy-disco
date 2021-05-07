@@ -2,7 +2,7 @@ import { MdWork } from "react-icons/md";
 import { FaHome, FaEnvelope, FaItchIo, FaGithub } from "react-icons/fa";
 import { FC } from "react";
 import styled from "styled-components";
-import Loading from "components/Loading";
+import Loading from "components/util/Loading";
 
 interface Detailsinterface {
     professtion: string;

@@ -9,19 +9,17 @@ interface NavitemInterface {
 }
 
 const NavitemStyle = styled(motion.li)`
+    user-select: none;
     width: ${(props) => props.theme.navbar.navitem.width};
     display: flex;
     justify-content: center;
     align-items: center;
-    a {
-        color: ${(props) => props.theme.navbar.textColor};
-    }
     .icon-button {
         color: ${(props) => props.theme.navbar.textColor};
         width: ${(props) => props.theme.navbar.navitem.buttonSize};
         height: ${(props) => props.theme.navbar.navitem.buttonSize};
         background-color: ${(props) => props.theme.navbar.bg};
-        border: ${(props) => props.theme.navbar.border};
+        border: 1px solid ${(props) => props.theme.navbar.bgAccent};
         border-radius: 10px;
         padding: 5px;
         margin: 2px;
@@ -29,9 +27,13 @@ const NavitemStyle = styled(motion.li)`
         justify-content: center;
         align-items: center;
         svg {
-            fill: ${(props) => props.theme.navbar.textColor};
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
+        }
+        :hover {
+            border-color: ${(props) => props.theme.navbar.scbg};
+            color: ${(props) => props.theme.navbar.scbg};
+            filter: brightness(50%);
         }
     }
 `;
@@ -39,8 +41,7 @@ const NavitemStyle = styled(motion.li)`
 const Navitem: FC<NavitemInterface> = ({ link, icon, children }) => {
     const [open, setopen] = useState(false);
     return (
-        <NavitemStyle whileHover={{ y: 10 }} whileTap={{ scale: 0.9 }}>
-            {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
+        <NavitemStyle whileHover={{ y: 5 }} whileTap={{ scale: 0.9 }}>
             <Link to={link} className="icon-button" onClick={() => setopen(!open)}>
                 {icon}
             </Link>

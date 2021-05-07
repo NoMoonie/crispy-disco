@@ -9,7 +9,13 @@ const ContactStyle = styled(motion.div)`
     color: ${(props) => props.theme.main.textColor};
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 100vh;
+    min-height: 100vh;
+    @media (max-width: 700px) {
+        grid-template-columns: 1fr;
+    }
+    @media (max-width: 400px) {
+        min-height: 150vh;
+    }
 `;
 
 const Div = styled(motion.div)`
@@ -21,27 +27,30 @@ const Div = styled(motion.div)`
         color: ${(props) => props.theme.main.scbg};
         text-align: center;
     }
+    padding: 2em;
 `;
 
 const Input = styled(motion.input)`
     background-color: ${(props) => props.theme.main.bgAccent};
     color: ${(props) => props.theme.main.textColor};
     border: none;
-    font-size: 18pt;
+    font-size: 14pt;
     padding: 0.5em;
     border-radius: 10px;
-    width: 400px;
+    width: 500px;
+    height: 30px;
 `;
 const TextArea = styled(motion.textarea)`
     background-color: ${(props) => props.theme.main.bgAccent};
     color: ${(props) => props.theme.main.textColor};
     border: none;
-    font-size: 18pt;
+    font-size: 14pt;
     padding: 0.5em;
     border-radius: 10px;
-    height: 150px;
-    max-height: 200px;
-    max-width: 400px;
+    max-height: 550px;
+    min-height: 300px;
+    max-width: 500px;
+    min-width: 500px;
 `;
 
 const Contact = () => {
@@ -53,9 +62,9 @@ const Contact = () => {
             <Div variants={container} initial="hidden" animate="show">
                 <h1>Get in touch</h1>
                 <Input transition={transitions} variants={stagerdItems} placeholder="Name" />
-                <Input transition={transitions} variants={stagerdItems} placeholder="Email" />
-                <Input transition={transitions} variants={stagerdItems} placeholder="Subject" />
-                <TextArea transition={transitions} variants={stagerdItems} placeholder="Message" />
+                <Input required transition={transitions} variants={stagerdItems} placeholder="Email*" />
+                <Input required transition={transitions} variants={stagerdItems} placeholder="Subject*" />
+                <TextArea required transition={transitions} variants={stagerdItems} placeholder="Message*" />
                 <Button>Send</Button>
             </Div>
         </ContactStyle>

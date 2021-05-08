@@ -20,13 +20,19 @@ const AboutStyle = styled(motion.div)`
     display: grid;
     grid-template-columns: 0.7fr 1fr 1fr;
     grid-template-rows: 0.5fr 0.2fr 1fr;
-    height: 130vh;
+    min-height: 130vh;
     gap: 0.5em;
-    margin-top: 4em;
+    margin-top: 0.5em;
     margin-bottom: 1em;
-    overflow: hidden;
+    overflow: auto;
     margin-left: 10em;
     margin-right: 10em;
+    @media (max-width: 1100px) {
+        grid-template-columns: auto;
+        margin-left: 1em;
+        margin-right: 1em;
+        /*  display: block; */
+    }
 `;
 
 const Main = styled.div`
@@ -41,8 +47,16 @@ const Main = styled.div`
         line-height: 1.5em;
         margin-top: 1em;
     }
-    &.int {
-        grid-column: 2/4;
+
+    @media (max-width: 870px) {
+        &.int {
+            display: none;
+        }
+    }
+    @media (min-width: 870px) {
+        &.int {
+            grid-column: 2/4;
+        }
     }
 `;
 
@@ -93,7 +107,7 @@ const Home = () => {
             </Box1>
             <Main>
                 <h1>About Me!</h1>
-                <p>Yes! whom am i. I'm a 22 year old guy from sweden i'm kind and creative.</p>
+                <p>I'm a 22 year old guy from sweden i'm kind and creative.</p>
                 <p>
                     Things i'm most passionate about is web develepment In terms of the work. Love to code it's fun to
                     make things that have funktionality, or figureout how stuff works/funktions.

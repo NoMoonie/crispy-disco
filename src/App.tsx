@@ -28,8 +28,8 @@ const Main = styled.div`
 const App = () => {
     return (
         <ThemeProvider theme={Theme}>
-            <GlobalStyle />
             <Main>
+                <GlobalStyle />
                 <Navbar>
                     <Navitem link="/contact" icon={<FaEnvelope />} />
                     <Navitem link="/gallery" icon={<FaImage />} />

@@ -10,7 +10,7 @@ const ContactStyle = styled(motion.div)`
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: 100vh;
-    @media (max-width: 700px) {
+    @media (max-width: 768px) {
         grid-template-columns: 1fr;
     }
     @media (max-width: 400px) {

@@ -13,10 +13,14 @@ const ProjektsStyle = styled(motion.div)`
     grid-auto-rows: 400px;
     gap: 0.5em;
     min-height: 100vh;
-    margin-top: 4em;
+    margin-top: 0.5em;
     margin-bottom: 1em;
     margin-left: 10em;
     margin-right: 10em;
+    @media (max-width: 1100px) {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
 `;
 
 const Overlay = styled(motion.div)`

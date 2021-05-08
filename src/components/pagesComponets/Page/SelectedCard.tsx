@@ -26,6 +26,10 @@ const SelectedCardStyle = styled(motion.div)<cardporps>`
     border-radius: 10px;
     color: ${(props) => props.theme.main.textColor};
     overflow: auto;
+    @media (max-width: 490px) {
+        width: 140vw;
+        height: 140vh;
+    }
 `;
 
 const Content = styled(motion.div)``;

@@ -8,7 +8,7 @@ import { container, stagerdItems, transitions } from "styled/anim";
 const ContactStyle = styled(motion.div)`
     color: ${(props) => props.theme.main.textColor};
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     min-height: 100vh;
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
@@ -16,18 +16,22 @@ const ContactStyle = styled(motion.div)`
     @media (max-width: 400px) {
         min-height: 150vh;
     }
+    place-content: center;
 `;
 
 const Div = styled(motion.div)`
     background-color: ${(props) => props.theme.main.bg};
     display: grid;
     place-content: center;
+    padding: 2em;
     gap: 1em;
+    grid-column: 2/3;
     h1 {
         color: ${(props) => props.theme.main.scbg};
         text-align: center;
     }
-    padding: 2em;
+    border-radius: 10px;
+    margin-bottom: 10em;
 `;
 
 const Input = styled(motion.input)`

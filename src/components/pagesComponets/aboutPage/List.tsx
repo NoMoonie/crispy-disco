@@ -9,6 +9,7 @@ const Box2Inner = styled.div<{ loading: boolean }>`
     place-content: ${(props) => (props.loading ? "center" : "")};
     gap: 1em;
     margin-top: 1em;
+    overflow-x: hidden;
 `;
 
 const List: FC<Listinterface> = ({ children, loading }) => {

@@ -21,32 +21,38 @@ export const ProfilePic = styled.div`
 
 export const Box1 = styled.div`
     background-color: ${(porps) => porps.theme.main.bg};
-
     /* border: 1px solid ${(props) => props.theme.main.scAccent}; */
     border-radius: 10px;
-    grid-row: 1/5;
-
+    overscroll-behavior: contain;
     section {
         padding: 1em;
         display: grid;
         gap: 1em;
     }
-    overscroll-behavior: contain;
+    @media (min-width: 870px) {
+        grid-row: 1/5;
+        order: 0;
+    }
+    @media (max-width: 870px) {
+        order: 6;
+    }
 `;
 
 export const Box2 = styled.div<{ top?: boolean }>`
     background-color: ${(porps) => porps.theme.main.bg};
     /* border: 1px solid ${(props) => props.theme.main.scAccent}; */
     border-radius: 10px;
-    grid-row: 3/5;
     padding: 1em;
+    overscroll-behavior: contain;
+    overflow: auto;
     svg {
         height: 40px;
         width: 40px;
     }
-    overflow: auto;
     h1 {
         color: ${(props) => props.theme.main.scbg};
     }
-    overscroll-behavior: contain;
+    @media (min-width: 870px) {
+        grid-row: 3/5;
+    }
 `;

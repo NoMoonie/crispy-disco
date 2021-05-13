@@ -21,25 +21,25 @@ const LinkStyle = styled.div<{ Primary?: boolean; isIcon?: boolean; isContent: a
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     .link {
         color: ${(props) => (props.Primary ? props.theme.main.textColor : props.theme.main.scbg)};
         border: ${(props) => (props.Primary ? props.theme.main.bgAccent : props.theme.main.scbg)} 0.01em solid;
-        background-color: ${(props) => (props.Primary ? props.theme.main.bg : "none")};
+        background-color: ${(props) => (props.Primary ? props.theme.main.bg : "transparent")};
         font-size: ${(props) => (props.fontSize ? props.fontSize : "1.5em")};
         padding: ${(props) => (props.isContent ? "0.25em 1em" : "0.25em")};
         border-radius: 0.25em;
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
         svg {
             width: ${(props) => (props.isContent ? "25px" : "31px")};
             height: ${(props) => (props.isContent ? "25px" : "31px")};
         }
         :hover {
-            border-color: ${(props) => (props.Primary ? props.theme.main.scbg : props.theme.main.scbg)};
-            color: ${(props) => (props.Primary ? props.theme.main.scbg : props.theme.main.scbg)};
-            filter: brightness(50%);
+            border-color: ${(props) => (props.Primary ? props.theme.main.scbg : props.theme.button.hover)};
+            color: ${(props) => (props.Primary ? props.theme.main.scbg : props.theme.button.hover)};
+            filter: ${(props) => (props.Primary ? "brightness(50%)" : "")};
         }
         span {
             margin-left: ${(props) => (props.isIcon ? "0.25em" : "")};
@@ -50,10 +50,10 @@ const LinkStyle = styled.div<{ Primary?: boolean; isIcon?: boolean; isContent: a
 const Button: FC<Buttoninterface> = ({ children, onClick, Primary, icon, fontSize }) => {
     return (
         <LinkStyle Primary={Primary} onClick={onClick} isIcon={icon} isContent={children} fontSize={fontSize}>
-            <div className="link">
+            <button className="link">
                 {icon}
                 {children && <span>{children}</span>}
-            </div>
+            </button>
         </LinkStyle>
     );
 };

@@ -29,6 +29,9 @@ const Box2 = styled.div`
         transform: rotate(-15deg) scale(1.5);
         z-index: -1;
     }
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const Home = () => {

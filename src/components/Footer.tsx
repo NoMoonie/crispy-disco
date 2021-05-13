@@ -2,22 +2,25 @@ import styled from "styled-components";
 import { FaRegCopyright } from "react-icons/fa";
 
 const FooterStyle = styled.div`
-    height: 100px;
     background-color: ${(props) => props.theme.main.bg};
     color: ${(props) => props.theme.main.textColor};
     display: grid;
     place-content: center;
     grid-template-columns: 1fr 1fr 1fr;
+    height: 100px;
     text-align: center;
     border-top: ${(props) => props.theme.main.border};
+    @media (max-width: 700px) {
+        grid-template-columns: 1fr;
+    }
+    align-self: end;
 `;
 
 const Div = styled.div`
-    height: 100%;
     color: ${(props) => props.theme.main.textColor};
     display: flex;
     justify-content: space-evenly;
-    padding: 10px;
+    padding: 1em;
 `;
 
 const Footer = () => {

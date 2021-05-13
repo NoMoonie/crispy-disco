@@ -2,6 +2,7 @@ import ButtonWrapper from "components/util/ButtonWrapper";
 import { AnimatePresence, motion } from "framer-motion";
 import { FC } from "react";
 import styled from "styled-components";
+import { container, stagerdItems, transitions } from "styled/anim";
 
 interface Homepage {
     open: boolean;
@@ -18,7 +19,7 @@ const Box1 = styled.div`
 
 const Box1inner = styled(motion.span)`
     font-size: 25pt;
-    p {
+    .footer {
         font-size: 12pt;
         color: ${(props) => props.theme.main.bgAccent};
         margin-top: 1em;
@@ -26,28 +27,13 @@ const Box1inner = styled(motion.span)`
     span {
         color: ${(props) => props.theme.main.scbg};
     }
+    @media (max-width: 768px) {
+        font-size: 18pt;
+        .footer {
+            display: none;
+        }
+    }
 `;
-
-const container = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.4,
-            delayChildren: 0.2,
-        },
-    },
-};
-
-const stagerdItems = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1 },
-};
-
-const transitions = {
-    type: "spring",
-    duration: 0.5,
-};
 
 const Intro: FC<Homepage> = ({ open, setOpen }) => {
     return (
@@ -63,7 +49,7 @@ const Intro: FC<Homepage> = ({ open, setOpen }) => {
                     <motion.h1 transition={transitions} variants={stagerdItems}>
                         web developer.
                     </motion.h1>
-                    <p>Back end Debeloper / Front end Developer / React / Electronjs / Wordpress </p>
+                    <p className="footer">Back end Debeloper / Front end Developer / React / Electronjs / Wordpress </p>
                 </Box1inner>
             </AnimatePresence>
             <ButtonWrapper open={open} setOpen={setOpen} />

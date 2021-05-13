@@ -12,6 +12,10 @@ const Wrapper = styled.section`
     padding-top: 1em;
     display: flex;
     gap: 1em;
+    @media (max-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(1, 0.5fr);
+    }
 `;
 
 const ButtonWrapper: FC<Wrapperinterface> = ({ open, setOpen }) => {

@@ -2,9 +2,9 @@ import { Pagetransiton, transition } from "components/Pageroutes";
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { items } from "components/pagesComponets/Page/data";
-import SelectedCard from "components/pagesComponets/Page/SelectedCard";
-import ItemCard from "components/pagesComponets/Page/ItemCard";
+import { items } from "components/pagesComponets/projektPage/data";
+import SelectedCard from "components/pagesComponets/projektPage/SelectedCard";
+import ItemCard from "components/pagesComponets/projektPage/ItemCard";
 
 const ProjektsStyle = styled(motion.div)`
     color: ${(props) => props.theme.main.textColor};
@@ -13,10 +13,14 @@ const ProjektsStyle = styled(motion.div)`
     grid-auto-rows: 400px;
     gap: 0.5em;
     min-height: 100vh;
-    margin-top: 4em;
+    margin-top: 0.5em;
     margin-bottom: 1em;
     margin-left: 10em;
     margin-right: 10em;
+    @media (max-width: 1100px) {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
 `;
 
 const Overlay = styled(motion.div)`

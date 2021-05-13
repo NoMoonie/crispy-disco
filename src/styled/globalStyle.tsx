@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
             color: #fff; 
             background-color:#fc5185;
         }
+        
     }
     body{
         height: 100%;

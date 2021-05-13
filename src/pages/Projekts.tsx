@@ -2,9 +2,9 @@ import { Pagetransiton, transition } from "components/Pageroutes";
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { items } from "components/pagesComponets/Page/data";
-import SelectedCard from "components/pagesComponets/Page/SelectedCard";
-import ItemCard from "components/pagesComponets/Page/ItemCard";
+import { items } from "components/pagesComponets/projektPage/data";
+import SelectedCard from "components/pagesComponets/projektPage/SelectedCard";
+import ItemCard from "components/pagesComponets/projektPage/ItemCard";
 
 const ProjektsStyle = styled(motion.div)`
     color: ${(props) => props.theme.main.textColor};

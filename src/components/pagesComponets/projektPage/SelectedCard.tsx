@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { FC } from "react";
 import styled from "styled-components";
-import Header from "components/pagesComponets/Page/Header";
+import Header from "components/pagesComponets/projektPage/Header";
 
 const container = {
     hidden: { opacity: 0 },

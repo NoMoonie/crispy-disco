@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import React, { FC } from "react";
-import Header from "components/pagesComponets/Page/Header";
+import Header from "components/pagesComponets/projektPage/Header";
 
 export interface Itemprops {
     item?: any;

@@ -88,7 +88,7 @@ const Contact = () => {
                 <Button>Send</Button>
                 <Overlay>
                     <div>
-                        <h1>Not Working! just yet :)</h1>
+                        <h1>Not Working! just yet</h1>
                         <p>contact me send an email to : emilstrjobb@gmail.com </p>
                     </div>
                 </Overlay>

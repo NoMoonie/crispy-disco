@@ -32,6 +32,8 @@ const Div = styled(motion.div)`
     }
     border-radius: 10px;
     margin-bottom: 10em;
+    position: relative;
+    overflow: hidden;
 `;
 
 const Input = styled(motion.input)`
@@ -57,6 +59,20 @@ const TextArea = styled(motion.textarea)`
     min-width: 500px;
 `;
 
+const Overlay = styled.div`
+    position: absolute;
+    background-color: hsl(0, 0%, 0%, 0.9);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    div {
+        background-color: ${(props) => props.theme.main.bg};
+        padding: 2em;
+        border-radius: 10px;
+    }
+`;
+
 const Contact = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -70,6 +86,12 @@ const Contact = () => {
                 <Input required transition={transitions} variants={stagerdItems} placeholder="Subject*" />
                 <TextArea required transition={transitions} variants={stagerdItems} placeholder="Message*" />
                 <Button>Send</Button>
+                <Overlay>
+                    <div>
+                        <h1>Not Working! just yet :)</h1>
+                        <p>contact me send an email to : emilstrjobb@gmail.com </p>
+                    </div>
+                </Overlay>
             </Div>
         </ContactStyle>
     );

@@ -20,6 +20,7 @@ const ProjektsStyle = styled(motion.div)`
     @media (max-width: 1100px) {
         margin-left: 1em;
         margin-right: 1em;
+        grid-template-columns: 1fr;
     }
 `;
 

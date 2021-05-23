@@ -2,7 +2,6 @@ import { Pagetransiton, transition } from "components/Pageroutes";
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { items } from "components/pagesComponets/projektPage/data";
 import SelectedCard from "components/pagesComponets/projektPage/SelectedCard";
 import ItemCard from "components/pagesComponets/projektPage/ItemCard";
 
@@ -57,9 +56,9 @@ const Projekts = () => {
                 )}
             </AnimatePresence>
             <ProjektsStyle variants={Pagetransiton} initial="init" animate="show" exit="hidden" transition={transition}>
-                {items.map((item) => (
+                {/* {items.map((item) => (
                     <ItemCard key={item.id} item={item} selected={selected} setSelected={setSelected}></ItemCard>
-                ))}
+                ))} */}
             </ProjektsStyle>
         </AnimateSharedLayout>
     );

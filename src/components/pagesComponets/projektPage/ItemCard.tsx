@@ -2,14 +2,15 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import React, { FC } from "react";
 import Header from "components/pagesComponets/projektPage/Header";
+import { Link } from "react-router-dom";
 
 export interface Itemprops {
     item?: any;
-    selected?: any;
-    setSelected?: any;
+    selected: any;
+    setSelected: any;
 }
 
-const ItemCardStyle = styled(motion.div)<Itemprops>`
+const ItemCardStyle = styled(motion.div)<{ id?: any }>`
     background: ${(props) => props.theme.card.bg};
     width: initial;
     height: initial;

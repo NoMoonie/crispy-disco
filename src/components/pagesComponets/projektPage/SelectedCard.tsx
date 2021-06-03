@@ -14,11 +14,11 @@ const container = {
     },
 };
 
-interface cardporps {
+interface CardType {
     selected: any;
 }
 
-const SelectedCardStyle = styled(motion.div)<cardporps>`
+const SelectedCardStyle = styled(motion.div)<CardType>`
     background: ${(props) => props.theme.main.bg};
     width: 75vw;
     height: 80vh;
@@ -34,7 +34,7 @@ const SelectedCardStyle = styled(motion.div)<cardporps>`
 
 const Content = styled(motion.div)``;
 
-const SelectedCard: FC<cardporps> = ({ selected }) => {
+const SelectedCard: FC<CardType> = ({ selected }) => {
     return (
         <SelectedCardStyle
             selected={selected}

@@ -36,21 +36,11 @@ const Pageroutes = () => {
     return (
         <AnimatePresence exitBeforeEnter initial={false}>
             <Switch location={location} key={location.pathname}>
-                <Route exact path="/">
-                    <Home />
-                </Route>
-                <Route exact path="/about">
-                    <About />
-                </Route>
-                <Route exact path="/projekts">
-                    <Projekts />
-                </Route>
-                <Route exact path="/gallery">
-                    <Gallery />
-                </Route>
-                <Route exact path="/contact">
-                    <Contact />
-                </Route>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/about" component={About} />
+                <Route exact path={["/projekts/:id", "/projekts"]} component={Projekts} />
+                <Route exact path="/gallery" component={Gallery} />
+                <Route exact path="/contact" component={Contact} />
             </Switch>
         </AnimatePresence>
     );

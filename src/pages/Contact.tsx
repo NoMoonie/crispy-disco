@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import styled from "styled-components";
 import { container, stagerdItems, transitions } from "styled/anim";
+import emailjs from "emailjs-com";
 
 const ContactStyle = styled(motion.div)`
     color: ${(props) => props.theme.main.textColor};
@@ -20,20 +21,39 @@ const ContactStyle = styled(motion.div)`
 `;
 
 const Div = styled(motion.div)`
-    background-color: ${(props) => props.theme.main.bg};
-    display: grid;
-    place-content: center;
-    padding: 2em;
-    gap: 1em;
     grid-column: 2/3;
-    h1 {
-        color: ${(props) => props.theme.main.scbg};
-        text-align: center;
+    form {
+        background-color: ${(props) => props.theme.main.bg};
+        display: grid;
+        place-content: center;
+        padding: 2em;
+        gap: 1em;
+        grid-column: 2/3;
+        h1 {
+            color: ${(props) => props.theme.main.scbg};
+            text-align: center;
+        }
+        border-radius: 10px;
+        margin-bottom: 10em;
+        position: relative;
+        overflow: hidden;
     }
-    border-radius: 10px;
-    margin-bottom: 10em;
-    position: relative;
-    overflow: hidden;
+    .sub-button {
+        justify-self: center;
+        background: none;
+        border-radius: 0.25em;
+        border: 1px solid ${(props) => props.theme.main.scbg};
+        color: ${(props) => props.theme.main.scbg};
+        font-size: 1.5rem;
+        width: 100px;
+        height: 2em;
+        cursor: pointer;
+        :hover {
+            border-color: ${(props) => props.theme.button.hover};
+            color: ${(props) => props.theme.button.hover};
+            filter: brightness(30%);
+        }
+    }
 `;
 
 const Input = styled(motion.input)`
@@ -73,6 +93,20 @@ const Overlay = styled.div`
     }
 `;
 
+const sendEmail = (e: any) => {
+    e.preventDefault();
+
+    emailjs.sendForm("service_zyb2dqc", "template_33mmbib", e.target, "user_0kTCc6gGv0FGJgHwseMtL").then(
+        (result) => {
+            alert(result.text);
+        },
+        (error) => {
+            alert(error.text);
+        }
+    );
+    e.target.reset();
+};
+
 const Contact = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -80,18 +114,32 @@ const Contact = () => {
     return (
         <ContactStyle variants={Pagetransiton} initial="init" animate="show" exit="hidden" transition={transition}>
             <Div variants={container} initial="hidden" animate="show">
-                <h1>Get in touch</h1>
-                <Input transition={transitions} variants={stagerdItems} placeholder="Name" />
-                <Input required transition={transitions} variants={stagerdItems} placeholder="Email*" />
-                <Input required transition={transitions} variants={stagerdItems} placeholder="Subject*" />
-                <TextArea required transition={transitions} variants={stagerdItems} placeholder="Message*" />
-                <Button>Send</Button>
-                <Overlay>
-                    <div>
-                        <h1>Not Working! just yet</h1>
-                        <p>contact me send an email to : emilstrjobb@gmail.com </p>
-                    </div>
-                </Overlay>
+                <form onSubmit={sendEmail}>
+                    <h1>Get in touch</h1>
+                    <Input transition={transitions} variants={stagerdItems} placeholder="Name" name="name" />
+                    <Input
+                        required
+                        transition={transitions}
+                        variants={stagerdItems}
+                        placeholder="Email*"
+                        name="email"
+                    />
+                    <Input
+                        required
+                        transition={transitions}
+                        variants={stagerdItems}
+                        placeholder="Subject*"
+                        name="subject"
+                    />
+                    <TextArea
+                        required
+                        transition={transitions}
+                        variants={stagerdItems}
+                        placeholder="Message*"
+                        name="message"
+                    />
+                    <input className="sub-button" type="submit" value="send" />
+                </form>
             </Div>
         </ContactStyle>
     );

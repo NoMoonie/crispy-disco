@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import SelectedCard from "components/pagesComponets/projektPage/SelectedCard";
 import ItemCard from "components/pagesComponets/projektPage/ItemCard";
+import { Link } from "react-router-dom";
 
 const ProjektsStyle = styled(motion.div)`
     color: ${(props) => props.theme.main.textColor};
@@ -30,10 +31,14 @@ const Overlay = styled(motion.div)`
     bottom: 0;
     left: 0;
     right: 0;
-    display: grid;
     background-color: hsl(341, 96%, 65%, 0.2);
+    overscroll-behavior: contain;
+    overflow-y: auto;
+    display: grid;
     place-content: center;
 `;
+
+const testdata: object = { id: "1", title: "test" };
 
 const Projekts = () => {
     const [selected, setSelected] = useState(false);
@@ -59,6 +64,7 @@ const Projekts = () => {
                 {/* {items.map((item) => (
                     <ItemCard key={item.id} item={item} selected={selected} setSelected={setSelected}></ItemCard>
                 ))} */}
+                <ItemCard item={testdata} selected={selected} setSelected={setSelected}></ItemCard>
             </ProjektsStyle>
         </AnimateSharedLayout>
     );
